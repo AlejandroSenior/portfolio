@@ -1,0 +1,28 @@
+---
+import Icon from '@components/Icon.astro';
+---
+
+<!-- Floating scroll-to-top button (revealed via scroll-driven animation) -->
+<div class="pointer-events-none fixed top-0 z-50 h-dvh w-dvw">
+  <button
+    type="button"
+    tabindex="0"
+    data-scroll-to-top
+    data-scroll-top-btn
+    aria-label="Scroll To Top"
+    data-tippy-content="Scroll To Top"
+    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 pointer-events-auto absolute -bottom-32 right-0 m-6 aspect-square size-12 min-h-12 min-w-12 rounded-full lg:m-12 xl:size-16 xl:min-h-16 xl:min-w-16 xl:p-2"
+  >
+    <Icon name="lucide:arrow-up" class="aspect-square size-6 min-h-6 min-w-6 xl:size-8" />
+  </button>
+</div>
+
+<!-- Ambient background particles -->
+<div data-particles class="pointer-events-none absolute inset-0 top-0 -z-50 mx-auto w-full max-w-screen-lg">
+  <canvas
+    data-particle-canvas
+    data-quantity="70"
+    data-color="rgb(255, 255, 255)"
+    aria-hidden="true"
+    class="size-full opacity-0 transition-opacity duration-700"></canvas>
+</div>

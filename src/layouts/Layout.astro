@@ -2,50 +2,46 @@
 import '../styles/global.css';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
 }
 
-const { title, description = 'Portafolio de desarrollador — Experiencias digitales únicas' } = Astro.props;
+const {
+  title = 'Alejandro Senior | Frontend Developer',
+  description = "Hey! I'm Alejandro Senior, a frontend developer specialized in Vue.js, passionate about building great user experiences and continuously evolving products."
+} = Astro.props;
+
+const canonical = 'https://alejandrosenior.dev/';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en" class="dark">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3fa5ff" />
+    <meta name="theme-color" content="#0c0a09" />
     <title>{title}</title>
-  </head>
-  <body>
-    <slot />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
 
-    <script>
-      /* Scroll-based reveal animations */
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
-      );
-      document
-        .querySelectorAll('.animate-on-scroll')
-        .forEach((el) => observer.observe(el));
-    </script>
+    <meta property="og:title" content="Alejandro Senior | Frontend Developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="en-US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alejandro Senior | Frontend Developer" />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="overflow-x-auto fold:overflow-x-clip font-sans antialiased relative">
+    <slot />
   </body>
 </html>

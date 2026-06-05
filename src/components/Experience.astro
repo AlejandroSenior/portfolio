@@ -1,91 +1,80 @@
 ---
-const experiences = [
-  {
-    title: 'Desarrollador de Software',
-    company: 'Empresa Actual',
-    companyUrl: 'https://example.com',
-    location: 'Ciudad, País',
-    period: 'Nov 2024 – Presente',
-    description:
-      'Descripción de tu rol actual y responsabilidades principales. Menciona tecnologías, impacto y logros destacados en tu día a día.',
-    tags: ['TypeScript', 'React', 'Node.js', 'AWS'],
-  },
-  {
-    title: 'Desarrollador Full Stack',
-    company: 'Empresa Anterior',
-    companyUrl: 'https://example.com',
-    location: 'Ciudad, País',
-    period: 'Ene 2022 – Oct 2024',
-    description:
-      'Descripción de tu rol anterior. Incluye proyectos importantes, el impacto que generaste y las tecnologías que manejaste a diario.',
-    tags: ['JavaScript', 'Vue.js', 'Python', 'Docker'],
-  },
-  {
-    title: 'Desarrollador Junior',
-    company: 'Primera Empresa',
-    companyUrl: 'https://example.com',
-    location: 'Ciudad, País',
-    period: 'Mar 2020 – Dic 2021',
-    description:
-      'Descripción de tu primer rol profesional. Destaca el aprendizaje, los proyectos en los que participaste y tu crecimiento técnico.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Git'],
-  },
-];
+import Icon from '@components/Icon.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import SkillBadge from '@components/SkillBadge.astro';
+import { experience } from '@data/site';
 ---
 
-<section id="experiencia" class="py-28">
-  <div class="max-w-5xl mx-auto px-6">
-    <!-- Section label -->
-    <div class="animate-on-scroll">
-      <p class="section-label">01 — Experiencia</p>
-      <h2 class="text-4xl font-bold tracking-tight mb-14">
-        Dónde he <span class="gradient-text">trabajado</span>
-      </h2>
-    </div>
+<section id="experience" class="z-0 mx-auto max-w-screen-lg px-4 xs:px-6 sm:px-8" data-observed-section="1">
+  <SectionHeading title="Where I've worked" />
 
-    <div class="relative">
-      <!-- Vertical line -->
-      <div class="absolute left-0 top-2 bottom-2 w-px bg-white/6 hidden sm:block" aria-hidden="true"></div>
-
-      <div class="space-y-5 sm:pl-8">
-        {experiences.map((exp) => (
-          <article class="animate-on-scroll group relative">
-            <!-- Timeline dot -->
-            <div
-              class="absolute -left-9.25 top-5 hidden sm:flex items-center justify-center w-3 h-3 rounded-full border border-white/20 bg-dark group-hover:border-primary/60 group-hover:bg-primary/10 transition-all duration-300"
-              aria-hidden="true"
-            ></div>
-
-            <div class="rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
-              <!-- Header row -->
-              <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-1 mb-1">
-                <h3 class="text-lg font-semibold leading-snug">
-                  {exp.title}
-                  <span class="text-gray-custom font-normal"> · </span>
-                  <a
-                    href={exp.companyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-primary hover:text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary transition-colors"
-                  >
-                    {exp.company}
-                  </a>
-                </h3>
-                <span class="text-sm text-gray-custom shrink-0 mt-0.5 tabular-nums">{exp.period}</span>
-              </div>
-
-              <p class="text-sm text-gray-custom mb-4">{exp.location}</p>
-              <p class="text-base text-white/70 leading-relaxed mb-5">{exp.description}</p>
-
-              <div class="flex flex-wrap gap-1.5">
-                {exp.tags.map((tag) => (
-                  <span class="tag">{tag}</span>
-                ))}
+  <div
+    class="timeline h-fit flex-col justify-center gap-8 ml-2 flex w-full items-start py-6 sm:ml-4 lg:ml-8"
+    data-timeline-items={experience.length}
+  >
+    <ul class="w-full">
+      {
+        experience.map((entry, i) => (
+          <li
+            class="timeline-entry grid w-full grid-cols-[20px,1fr] grid-rows-[auto,1fr] items-start justify-start gap-x-2 gap-y-7 sm:gap-x-7 lg:gap-14 ease transition-opacity duration-300"
+            data-timeline-index={i + 1}
+          >
+            <div class="entry-track mt-4 flex size-full flex-col items-center opacity-20">
+              <div class="relative mt-8 h-full w-1 rounded-full bg-muted lg:w-1.5">
+                <div class="entry-fill absolute inset-0 w-full origin-top rounded-full bg-primary" />
               </div>
             </div>
-          </article>
-        ))}
-      </div>
-    </div>
+
+            <div class="entry-content opacity-0">
+              <article class="group relative flex max-w-4xl flex-col p-4">
+                <div class="absolute -inset-2 z-1 hidden rounded-lg transition lg:-inset-6 lg:block group-hover:bg-accent/30 group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] group-hover:drop-shadow-lg group-focus-within:bg-accent/30 group-focus-within:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] group-focus-within:drop-shadow-lg" />
+
+                <header class="mb-8 space-y-3">
+                  <h3 class="text-pretty font-header text-xl font-bold transition duration-200 group-focus-within:text-primary lg:group-hover:text-primary">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={entry.href}
+                      aria-label={`Link to "${entry.title}" (Opens in a new tab)`}
+                      class="group"
+                    >
+                      <span>
+                        <span class="absolute -inset-4 hidden rounded-lg lg:block" />
+                        <span> {entry.title} </span>
+                        <Icon
+                          name="lucide:arrow-up-right"
+                          class="relative bottom-0.5 right-px inline-block size-[0.8em] transition-transform duration-300 lg:group-hover:-translate-y-1 lg:group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1"
+                        />
+                      </span>
+                    </a>
+                  </h3>
+                  <div class="text-pretty text-lg font-semibold text-muted-foreground/70 transition-colors duration-200">
+                    <span>{entry.location}</span>
+                    <span class="opacity-50"> | </span>
+                    <span>
+                      <time datetime={entry.start.datetime}>{entry.start.label}</time>
+                      {' - '}
+                      <time datetime={entry.end.datetime}>{entry.end.label}</time>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="space-y-[1lh]">
+                  {entry.paragraphs.map((p) => (
+                    <p class="max-w-200 text-pretty text-lg text-foreground/80 group-hover:text-accent-foreground/80" set:html={p} />
+                  ))}
+                </div>
+
+                <footer class="mt-10 flex flex-wrap gap-2">
+                  {entry.skills.map((skill) => (
+                    <SkillBadge label={skill.label} icon={skill.icon} />
+                  ))}
+                </footer>
+              </article>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>

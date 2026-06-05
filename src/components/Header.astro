@@ -1,87 +1,140 @@
 ---
-const navItems = [
-  { href: '#experiencia', label: 'Experiencia' },
-  { href: '#proyectos', label: 'Proyectos' },
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#contacto', label: 'Contacto' },
-];
+import Icon from '@components/Icon.astro';
+import { navLinks } from '@data/site';
 ---
 
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  class="inset-x-0 top-0 z-50 min-h-header content-center sticky overflow-x-auto fold:overflow-x-clip transition-colors duration-300"
 >
-  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="text-sm font-semibold text-white/90 hover:text-white transition-colors tracking-tight">
-      Tu Nombre
-    </a>
-
-    <nav class="hidden md:block">
-      <ul class="flex items-center gap-1">
-        {navItems.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class="nav-link px-3 py-1.5 text-sm text-gray-custom hover:text-white rounded-md hover:bg-white/5 transition-all duration-150"
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+  <div class="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-4 font-header md:justify-around">
+    <!-- Desktop navigation -->
+    <nav class="hidden w-full justify-between md:flex">
+      <ul class="flex items-center font-medium text-base gap-8">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                onclick={`window.smoothScrollTo('${link.href}', event)`}
+                data-nav-link="header"
+                href={link.href}
+                aria-label={`Link to "${link.label.toLowerCase()}"`}
+                class="group font-medium text-base inline-flex items-center justify-center gap-x-2"
+              >
+                <Icon name={link.icon} />
+                <span>{link.label}</span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
+    <!-- Mobile hamburger -->
     <button
-      id="menu-toggle"
-      class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border border-white/8 text-gray-custom hover:text-white hover:border-white/20 transition-all"
-      aria-label="Abrir menú"
+      type="button"
+      data-hamburger
+      aria-haspopup="dialog"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-accent-foreground h-10 md:hidden aspect-square p-0.5"
     >
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <span class="sr-only">Menu</span>
+      <svg class="pointer-events-none h-6 w-6 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <rect y="2" x="7" width="9" height="2" rx="1"></rect>
+        <rect y="7" width="16" height="2" rx="1"></rect>
+        <rect y="12" width="9" height="2" rx="1"></rect>
       </svg>
     </button>
-  </div>
 
-  <!-- Mobile menu -->
-  <div
-    id="mobile-menu"
-    class="hidden md:hidden border-t border-white/6 bg-dark/95 backdrop-blur-xl"
-  >
-    <ul class="max-w-5xl mx-auto flex flex-col px-6 py-3">
-      {navItems.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            class="block py-3 text-sm text-gray-custom hover:text-white border-b border-white/5 last:border-0 transition-colors"
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <!-- Language selector -->
+    <button
+      type="button"
+      aria-label="Language"
+      class="hidden md:flex h-10 items-center justify-end gap-x-2 px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 w-fit text-foreground/80"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="mr-0.5 size-[1.2em] md:mb-1"
+      >
+        <path d="m5 8 6 6"></path>
+        <path d="m4 14 6-6 2-3"></path>
+        <path d="M2 5h12"></path>
+        <path d="M7 2h1"></path>
+        <path d="m22 22-5-10-5 10"></path>
+        <path d="M14 18h6"></path>
+      </svg>
+      <span class="font-semibold tracking-wide">ENG</span>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="mb-0.5 h-4 w-4 opacity-50"
+        >
+          <path d="m6 9 6 6 6-6"></path>
+        </svg>
+      </div>
+    </button>
   </div>
 </header>
 
+<!-- Mobile menu panel -->
+<div
+  id="mobile-menu"
+  data-mobile-menu
+  hidden
+  class="fixed inset-x-4 bottom-4 z-50 hidden rounded-2xl border border-border backdrop-blur-md md:hidden"
+>
+  <div class="max-h-[80vh] overflow-y-scroll">
+    <nav class="grid w-full grid-cols-1 [&>ul]:my-6 [&>ul]:justify-self-center">
+      <ul class="flex items-center font-medium text-base w-max flex-col gap-6 mx-auto">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                onclick={`window.smoothScrollTo('${link.href}', event)`}
+                data-nav-link="menu"
+                href={link.href}
+                aria-label={`Link to "${link.label.toLowerCase()}"`}
+                class="group font-medium inline-flex items-center justify-center gap-x-4 text-2xl"
+              >
+                <Icon name={link.icon} />
+                <span>{link.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Mobile menu backdrop -->
+<div data-menu-backdrop hidden class="fixed inset-0 z-40 bg-black/60 md:hidden"></div>
+
 <script>
-  /* Scroll-aware header bg */
   const header = document.getElementById('site-header');
-  const updateHeader = () => {
-    if (window.scrollY > 20) {
-      header?.classList.add('bg-dark/80', 'backdrop-blur-xl', 'border-b', 'border-white/6');
+  const onScroll = () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('bg-background');
     } else {
-      header?.classList.remove('bg-dark/80', 'backdrop-blur-xl', 'border-b', 'border-white/6');
+      header?.classList.remove('bg-background');
     }
   };
-  window.addEventListener('scroll', updateHeader, { passive: true });
-  updateHeader();
-
-  /* Mobile toggle */
-  document.getElementById('menu-toggle')?.addEventListener('click', () => {
-    document.getElementById('mobile-menu')?.classList.toggle('hidden');
-  });
-  document.querySelectorAll('#mobile-menu a').forEach((link) => {
-    link.addEventListener('click', () => {
-      document.getElementById('mobile-menu')?.classList.add('hidden');
-    });
-  });
+  window.addEventListener('scroll', onScroll, { passive: true });
 </script>

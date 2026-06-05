@@ -1,83 +1,239 @@
 ---
-const skills = [
-  { category: 'Frontend',     items: ['JavaScript', 'TypeScript', 'React', 'Astro', 'Tailwind CSS'] },
-  { category: 'Backend',      items: ['Node.js', 'Python', 'Express', 'PostgreSQL', 'MongoDB'] },
-  { category: 'Herramientas', items: ['Git', 'Docker', 'AWS', 'Linux', 'Figma'] },
+import Icon from "@components/Icon.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+
+const loves = [
+  {
+    label: "Deporte",
+    img: "/images/emojis/sport/sport.png",
+    sources: [
+      { srcset: "/images/emojis/sport/sport.png", type: "image/png" },
+      { srcset: "/images/emojis/sport/sport.png", type: "image/png" },
+      { srcset: "/images/emojis/sport/sport.png", type: "image/png" },
+    ],
+    alt: "Sport Emoji",
+    wrapper:
+      "relative flex -rotate-12 animate-float flex-col items-center -space-y-3 self-start justify-self-center",
+    label_pos: "inset-x-0 -z-10",
+  },
+  {
+    label: "Videojuegos",
+    img: "/_astro/gamepad.iYuC9gqD_VncHo.png",
+    sources: [
+      { srcset: "/_astro/gamepad.iYuC9gqD_HJz52.avif", type: "image/avif" },
+      { srcset: "/_astro/gamepad.iYuC9gqD_1pFcvy.webp", type: "image/webp" },
+      { srcset: "/_astro/gamepad.iYuC9gqD_VncHo.png", type: "image/png" },
+    ],
+    alt: "Gamepad Emoji",
+    wrapper:
+      "relative flex flex-col items-center -space-y-1.5 self-end justify-self-center md:bottom-3 lg:bottom-0",
+    label_pos: "relative left-[5%] z-10",
+  },
+  {
+    label: "Tecnología",
+    img: "/_astro/laptop.DgIfOJrS_ZrCqUY.png",
+    sources: [
+      { srcset: "/_astro/laptop.DgIfOJrS_Oeh6f.avif", type: "image/avif" },
+      { srcset: "/_astro/laptop.DgIfOJrS_1ULEWq.webp", type: "image/webp" },
+      { srcset: "/_astro/laptop.DgIfOJrS_ZrCqUY.png", type: "image/png" },
+    ],
+    alt: "Laptop Emoji",
+    wrapper:
+      "relative flex rotate-12 animate-float flex-col items-center -space-y-3 self-start justify-self-center animate-delay-700 md:top-0 lg:top-[10%]",
+    label_pos: "inset-x-0 -z-10",
+  },
 ];
 ---
 
-<section id="sobre-mi" class="py-28">
-  <div class="max-w-5xl mx-auto px-6">
-    <!-- Section label -->
-    <div class="animate-on-scroll">
-      <p class="section-label">03 — Sobre mí</p>
-      <h2 class="text-4xl font-bold tracking-tight mb-14">
-        Un poco más <span class="gradient-text">sobre mí</span>
-      </h2>
-    </div>
+<section
+  id="about"
+  class="mx-auto max-w-screen-xl px-4 xs:px-6 sm:px-8"
+  data-observed-section="3"
+>
+  <SectionHeading title="A little more about me" />
 
-    <!-- Bento grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div
+    class="my-6 grid grid-cols-10 justify-center gap-6 sm:mx-4 *:overflow-clip *:rounded-xl *:border *:bg-background"
+  >
+    <!-- At Work -->
+    <article
+      class="relative col-span-10 col-start-1 px-6 pb-0 pt-6 md:px-8 md:pt-8 lg:col-span-6"
+    >
+      <header
+        class="flex items-center gap-4 text-balance font-header text-2xl font-bold"
+      >
+        <picture>
+          <source srcset="/_astro/laptop.DgIfOJrS_Oeh6f.avif" type="image/avif" />
+          <source srcset="/_astro/laptop.DgIfOJrS_1ULEWq.webp" type="image/webp" />
+          <source srcset="/_astro/laptop.DgIfOJrS_ZrCqUY.png" type="image/png" />
+          <img
+            src="/_astro/laptop.DgIfOJrS_ZrCqUY.png"
+            alt="Laptop Emoji"
+            class="mt-2 size-[1.3em]"
+            width="64"
+            height="64"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+        <h3 class="mt-3">At Work</h3>
+      </header>
+      <p class="mt-8 text-pretty text-lg text-foreground/80">
+        With over 6 years of experience in frontend development, I work with a
+        strong <strong>attention to detail</strong> and a genuine focus on
+        <strong>product quality</strong>. I've grown from developer to leading
+        the frontend team, becoming the <strong>technical reference</strong> for
+        all UI-related decisions.
+      </p>
+      <p class="mb-2 mt-6 text-pretty text-lg text-foreground/80 fold:mb-4 sm:mb-2">
+        Building <b>well-structured, maintainable interfaces</b> that are also
+        enjoyable to use is what drives me — and I'm always looking for ways to
+        improve the codebase, the workflow, or the
+        <strong>user experience</strong>.
+      </p>
+      <div
+        class="relative overflow-hidden p-[20%] [@media(850px<=width<=920px)]:p-[18%] [@media(921px<=width<=1024px)]:p-[17%]"
+      >
+        <picture>
+          <source srcset="/_astro/method.av8F2PZO_1e3TR1.avif" type="image/avif" />
+          <source srcset="/_astro/method.av8F2PZO_Z2vGBXU.webp" type="image/webp" />
+          <source srcset="/_astro/method.av8F2PZO_5s01E.png" type="image/png" />
+          <img
+            src="/_astro/method.av8F2PZO_5s01E.png"
+            alt="My approach with code"
+            class="absolute inset-0 mx-auto w-fit opacity-50 lg:mt-2 xl:mt-0"
+            data-mask
+            width="720"
+            height="405"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+    </article>
 
-      <!-- Work -->
-      <div class="animate-on-scroll rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
-        <span class="text-2xl mb-4 block">💼</span>
-        <h3 class="text-base font-semibold mb-3">En el trabajo</h3>
-        <p class="text-base text-white/60 leading-relaxed">
-          Abordo mi trabajo con <span class="text-white/90 font-medium">atención al detalle</span> y
-          una actitud <span class="text-white/90 font-medium">diligente</span>. Me apasiona
-          automatizar procesos y construir sistemas que escalen.
+    <!-- My personal side -->
+    <article class="col-span-10 col-start-1 p-6 md:p-8 lg:col-span-4 lg:col-start-7">
+      <header
+        class="flex items-center gap-4 text-balance font-header text-2xl font-bold"
+      >
+        <picture>
+          <source srcset="/images/emojis/hand/hand.webp" type="image/webp" />
+          <source srcset="/images/emojis/hand/hand.png" type="image/png" />
+          <source srcset="/images/emojis/hand/hand.avif" type="image/avif" />
+          <img
+            src="/images/emojis/hand/hand.gif"
+            width="64"
+            height="64"
+            alt="Waving Hand Emoji"
+            decoding="async"
+            loading="lazy"
+            class="size-[1.5em]"
+          />
+        </picture>
+        <h3 class="mt-3">My personal side</h3>
+      </header>
+      <div>
+        <p class="mt-8 text-pretty text-lg text-foreground/80">
+          The three words that best define me are <strong>curious</strong>,
+          <strong>committed</strong>, and <strong>collaborative</strong>. I find
+          great satisfaction in understanding things deeply, not just making them
+          work.
+        </p>
+        <p class="mt-6 text-pretty text-lg text-foreground/80">
+          I enjoy <strong>sharing knowledge</strong> and growing alongside
+          teammates. And off the screen, you'll find me doing some sport, diving
+          into a game, or exploring whatever new tech has caught my attention.
         </p>
       </div>
-
-      <!-- Personal -->
-      <div class="animate-on-scroll rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
-        <span class="text-2xl mb-4 block">👋</span>
-        <h3 class="text-base font-semibold mb-3">Mi lado personal</h3>
-        <p class="text-base text-white/60 leading-relaxed">
-          Me definen tres palabras:
-          <span class="text-white/90 font-medium">resiliente</span>,
-          <span class="text-white/90 font-medium">optimista</span> e
-          <span class="text-white/90 font-medium">independiente</span>.
-          Siempre buscando entender cómo funcionan las cosas.
-        </p>
-      </div>
-
-      <!-- Skills — full width -->
-      <div class="animate-on-scroll sm:col-span-2 rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
-        <span class="text-2xl mb-4 block">🛠️</span>
-        <h3 class="text-base font-semibold mb-5">Habilidades</h3>
-        <div class="space-y-4">
-          {skills.map((skill) => (
-            <div>
-              <p class="text-sm font-medium text-primary mb-2">{skill.category}</p>
-              <div class="flex flex-wrap gap-1.5">
-                {skill.items.map((item) => (
-                  <span class="tag">{item}</span>
+      <div class="grid grid-cols-3 grid-rows-1 gap-x-8 pt-8 sm:gap-x-2">
+        {
+          loves.map((love) => (
+            <div data-emoji class={love.wrapper}>
+              <picture>
+                {love.sources.map((s) => (
+                  <source srcset={s.srcset} type={s.type} />
                 ))}
-              </div>
+                <img
+                  src={love.img}
+                  alt={love.alt}
+                  class="size-full"
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <p
+                class={`${love.label_pos} mt-2 min-h-fit min-w-max rounded-full border bg-[#1d1b1b] px-[1em] py-[0.2em] text-center text-xs sm:text-sm`}
+              >
+                <span class="mt-1 inline-flex items-center gap-x-2">
+                  <Icon name="heart" class="size-[1em]" />
+                  <span class="sr-only">Love</span>
+                  <span class="font-medium"> {love.label} </span>
+                </span>
+              </p>
             </div>
-          ))}
+          ))
+        }
+      </div>
+    </article>
+
+    <!-- Location -->
+    <article
+      class="grid grid-rows-[auto,1fr] col-span-10 col-start-1 p-6 md:p-8 @container"
+    >
+      <header class="flex items-center gap-4 font-header text-2xl font-bold">
+        <picture>
+          <source srcset="/_astro/house.BGi-6pIY_Zei1Ua.avif" type="image/avif" />
+          <source srcset="/_astro/house.BGi-6pIY_ZQ8FDh.webp" type="image/webp" />
+          <source srcset="/_astro/house.BGi-6pIY_ZKOpPe.png" type="image/png" />
+          <img
+            src="/_astro/house.BGi-6pIY_ZKOpPe.png"
+            alt="House Emoji"
+            class="size-[1.4em]"
+            width="64"
+            height="64"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+        <h3 class="mt-2 capitalize">Location</h3>
+      </header>
+      <div
+        class="mt-8 grid grid-cols-1 grid-rows-[1fr,auto,1fr] gap-y-5 @lg:grid-cols-[auto,auto,auto] @lg:grid-rows-1"
+      >
+        <div class="self-end">
+          <p class="text-center text-3xl font-medium" data-where>
+            Based in <strong>Madrid</strong>
+            <small
+              class="mt-2 block text-base font-normal text-foreground/60"
+              data-time-diff>—</small
+            >
+          </p>
+        </div>
+        <div
+          class="h-0.5 w-[80%] justify-self-center bg-muted @lg:h-full @lg:w-0.5"
+        >
+        </div>
+        <div
+          class="flex flex-col items-center justify-start text-center font-sans @lg:w-fit @lg:justify-self-center"
+        >
+          <time
+            class="whitespace-nowrap text-3xl font-semibold tabular-nums"
+            data-my-time
+          >
+            <span class="font-black capitalize text-primary" data-clock>--:-- --</span>
+            <span class="mt-2 text-lg uppercase text-foreground/80" data-tz
+              >GMT+1</span
+            >
+            <span
+              class="mt-1 block text-lg font-semibold text-foreground/60 capitalize"
+              data-date>—</span
+            >
+          </time>
         </div>
       </div>
-
-      <!-- Education -->
-      <div class="animate-on-scroll rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
-        <span class="text-2xl mb-4 block">🎓</span>
-        <h3 class="text-base font-semibold mb-2">Educación</h3>
-        <p class="text-base text-white/90 font-medium">Grado en Ingeniería Informática</p>
-        <p class="text-sm text-gray-custom mt-1">Universidad · 2018 – 2022</p>
-      </div>
-
-      <!-- Location -->
-      <div class="animate-on-scroll rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
-        <span class="text-2xl mb-4 block">📍</span>
-        <h3 class="text-base font-semibold mb-2">Ubicación</h3>
-        <p class="text-base text-white/60">
-          Con base en <span class="text-white/90 font-medium">Barcelona, España</span>
-        </p>
-      </div>
-
-    </div>
+    </article>
   </div>
 </section>
