@@ -1,0 +1,83 @@
+---
+const skills = [
+  { category: 'Frontend',     items: ['JavaScript', 'TypeScript', 'React', 'Astro', 'Tailwind CSS'] },
+  { category: 'Backend',      items: ['Node.js', 'Python', 'Express', 'PostgreSQL', 'MongoDB'] },
+  { category: 'Herramientas', items: ['Git', 'Docker', 'AWS', 'Linux', 'Figma'] },
+];
+---
+
+<section id="sobre-mi" class="py-28">
+  <div class="max-w-5xl mx-auto px-6">
+    <!-- Section label -->
+    <div class="animate-on-scroll">
+      <p class="section-label">03 — Sobre mí</p>
+      <h2 class="text-4xl font-bold tracking-tight mb-14">
+        Un poco más <span class="gradient-text">sobre mí</span>
+      </h2>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+      <!-- Work -->
+      <div class="animate-on-scroll rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
+        <span class="text-2xl mb-4 block">💼</span>
+        <h3 class="text-base font-semibold mb-3">En el trabajo</h3>
+        <p class="text-base text-white/60 leading-relaxed">
+          Abordo mi trabajo con <span class="text-white/90 font-medium">atención al detalle</span> y
+          una actitud <span class="text-white/90 font-medium">diligente</span>. Me apasiona
+          automatizar procesos y construir sistemas que escalen.
+        </p>
+      </div>
+
+      <!-- Personal -->
+      <div class="animate-on-scroll rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
+        <span class="text-2xl mb-4 block">👋</span>
+        <h3 class="text-base font-semibold mb-3">Mi lado personal</h3>
+        <p class="text-base text-white/60 leading-relaxed">
+          Me definen tres palabras:
+          <span class="text-white/90 font-medium">resiliente</span>,
+          <span class="text-white/90 font-medium">optimista</span> e
+          <span class="text-white/90 font-medium">independiente</span>.
+          Siempre buscando entender cómo funcionan las cosas.
+        </p>
+      </div>
+
+      <!-- Skills — full width -->
+      <div class="animate-on-scroll sm:col-span-2 rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
+        <span class="text-2xl mb-4 block">🛠️</span>
+        <h3 class="text-base font-semibold mb-5">Habilidades</h3>
+        <div class="space-y-4">
+          {skills.map((skill) => (
+            <div>
+              <p class="text-sm font-medium text-primary mb-2">{skill.category}</p>
+              <div class="flex flex-wrap gap-1.5">
+                {skill.items.map((item) => (
+                  <span class="tag">{item}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="animate-on-scroll rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
+        <span class="text-2xl mb-4 block">🎓</span>
+        <h3 class="text-base font-semibold mb-2">Educación</h3>
+        <p class="text-base text-white/90 font-medium">Grado en Ingeniería Informática</p>
+        <p class="text-sm text-gray-custom mt-1">Universidad · 2018 – 2022</p>
+      </div>
+
+      <!-- Location -->
+      <div class="animate-on-scroll rounded-2xl border border-white/6 bg-dark-lighter p-6 card-hover">
+        <span class="text-2xl mb-4 block">📍</span>
+        <h3 class="text-base font-semibold mb-2">Ubicación</h3>
+        <p class="text-base text-white/60">
+          Con base en <span class="text-white/90 font-medium">Barcelona, España</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

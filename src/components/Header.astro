@@ -1,0 +1,87 @@
+---
+const navItems = [
+  { href: '#experiencia', label: 'Experiencia' },
+  { href: '#proyectos', label: 'Proyectos' },
+  { href: '#sobre-mi', label: 'Sobre mí' },
+  { href: '#contacto', label: 'Contacto' },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-sm font-semibold text-white/90 hover:text-white transition-colors tracking-tight">
+      Tu Nombre
+    </a>
+
+    <nav class="hidden md:block">
+      <ul class="flex items-center gap-1">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="nav-link px-3 py-1.5 text-sm text-gray-custom hover:text-white rounded-md hover:bg-white/5 transition-all duration-150"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border border-white/8 text-gray-custom hover:text-white hover:border-white/20 transition-all"
+      aria-label="Abrir menú"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-white/6 bg-dark/95 backdrop-blur-xl"
+  >
+    <ul class="max-w-5xl mx-auto flex flex-col px-6 py-3">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="block py-3 text-sm text-gray-custom hover:text-white border-b border-white/5 last:border-0 transition-colors"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  /* Scroll-aware header bg */
+  const header = document.getElementById('site-header');
+  const updateHeader = () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('bg-dark/80', 'backdrop-blur-xl', 'border-b', 'border-white/6');
+    } else {
+      header?.classList.remove('bg-dark/80', 'backdrop-blur-xl', 'border-b', 'border-white/6');
+    }
+  };
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  /* Mobile toggle */
+  document.getElementById('menu-toggle')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+  document.querySelectorAll('#mobile-menu a').forEach((link) => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+    });
+  });
+</script>

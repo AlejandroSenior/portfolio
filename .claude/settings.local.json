@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Alejandro\\\\Documents\\\\GitHub\\\\portfolio\")",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\Alejandro\\\\Documents\\\\GitHub\\\\portfolio\\\\src\" -Recurse | Select-Object @{Name='Path';Expression={$_.FullName.Replace\\('C:\\\\Users\\\\Alejandro\\\\Documents\\\\GitHub\\\\portfolio\\\\', ''\\)}} | Sort-Object Path)",
+      "WebFetch(domain:ivanporto.io)",
+      "Bash(npm run *)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/)",
+      "Bash(node -e \"const p = require\\('playwright'\\); console.log\\('ok'\\)\")",
+      "Bash(npx playwright *)",
+      "Bash(npx --yes playwright@1.49.0 screenshot --browser chromium --full-page http://localhost:4321/ /tmp/hero-preview.png)",
+      "Bash(npx playwright@1.49.0 screenshot --browser chromium --full-page http://localhost:4321/ /tmp/hero-preview.png)",
+      "Bash(node -e ' *)",
+      "Bash(where chromium *)",
+      "Bash(where chrome *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)"
+    ]
+  }
+}

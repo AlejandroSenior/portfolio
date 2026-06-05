@@ -1,0 +1,20 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="py-10 border-t border-white/6">
+  <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-custom">
+    <p>
+      © {year} Tu Nombre. Hecho con
+      <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-primary/80 hover:text-primary transition-colors">Astro</a>
+      y
+      <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="text-primary/80 hover:text-primary transition-colors">Tailwind CSS</a>.
+    </p>
+    <a href="#" class="hover:text-white transition-colors flex items-center gap-1.5 group">
+      Volver arriba
+      <svg class="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+      </svg>
+    </a>
+  </div>
+</footer>
