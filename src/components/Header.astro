@@ -3,10 +3,7 @@ import Icon from '@components/Icon.astro';
 import { navLinks } from '@data/site';
 ---
 
-<header
-  id="site-header"
-  class="inset-x-0 top-0 z-50 min-h-header content-center sticky overflow-x-auto fold:overflow-x-clip transition-colors duration-300"
->
+<header id="site-header" class="fixed top-0 z-50 w-full content-center duration-300 animate-fade-down opacity-0 animate-delay-200">
   <div class="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-4 font-header md:justify-around">
     <!-- Desktop navigation -->
     <nav class="hidden w-full justify-between md:flex">

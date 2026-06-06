@@ -1,59 +1,36 @@
 ---
-import Icon from "@components/Icon.astro";
-import SectionHeading from "@components/SectionHeading.astro";
-import { contactSocials, EMAIL } from "@data/site";
+import Icon from '@components/Icon.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import { contactSocials, EMAIL } from '@data/site';
 
 const inputClass =
-  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:min-h-12";
-const labelClass = "text-base font-medium leading-none text-foreground";
+  'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:min-h-12';
+const labelClass = 'text-base font-medium leading-none text-foreground';
 ---
 
-<section
-  id="contact"
-  class="z-0 mx-auto max-w-screen-xl px-4 xs:px-6 sm:px-8"
-  data-astro-cid-4nf3vys4
-  data-observed-section="4"
->
+<section id="contact" class="z-0 mx-auto max-w-screen-xl px-4 xs:px-6 sm:px-8" data-astro-cid-4nf3vys4 data-observed-section="4">
   <SectionHeading title="Shoot me a message" />
 
-  <div class="contact-section-grid mt-6 pb-[4.5rem] sm:mx-4">
+  <div class="contact-section-grid mt-6 pb-18 sm:mx-4">
     <!-- Email -->
-    <div
-      class="grid-area-mail px-8 text-center font-header sm:text-balance xl:self-center xl:px-0 xl:text-left"
-    >
+    <div class="grid-area-mail px-8 text-center font-header sm:text-balance xl:self-center xl:px-0 xl:text-left">
       <p class="text-2xl font-medium">Contact me at <strong>any moment.</strong></p>
       <p class="mt-8 text-lg text-foreground/60">
-        <span
-          >Whether you have a question, a project in mind or just want to say hi,
-          you can reach me at:</span
-        >
-        <a
-          href={`mailto:${EMAIL}`}
-          class="mt-7 flex items-center justify-center gap-x-4 py-2 text-primary/80 xl:justify-start"
-        >
+        <span>Whether you have a question, a project in mind or just want to say hi, you can reach me at:</span>
+        <a href={`mailto:${EMAIL}`} class="mt-7 flex items-center justify-center gap-x-4 py-2 text-primary/80 xl:justify-start">
           <Icon name="lucide:mail" class="box-content inline-block size-[1.2em]" />
           <span class="hover:underline">{EMAIL}</span>
         </a>
       </p>
     </div>
 
-    <div
-      class="grid-area-divider inline-block h-0.5 w-full bg-muted md:h-full md:w-0.5 xl:h-0.5 xl:w-full xl:bg-clip-content xl:pr-3"
-    >
-    </div>
+    <div class="grid-area-divider inline-block h-0.5 w-full bg-muted md:h-full md:w-0.5 xl:h-0.5 xl:w-full xl:bg-clip-content xl:pr-3"></div>
 
     <!-- Social channels -->
-    <div
-      class="grid-area-links px-8 pt-12 text-center font-header sm:text-balance md:py-0 xl:self-center xl:px-0 xl:text-left"
-    >
+    <div class="grid-area-links px-8 pt-12 text-center font-header sm:text-balance md:py-0 xl:self-center xl:px-0 xl:text-left">
       <p class="text-2xl font-medium">Thank you for <strong>your time!</strong></p>
-      <p class="mt-8 text-lg text-foreground/60">
-        If you prefer it, feel free to also get in touch through any of the
-        following channels:
-      </p>
-      <ul
-        class="mt-6 flex w-full justify-center gap-x-2 xl:w-auto xl:justify-start"
-      >
+      <p class="mt-8 text-lg text-foreground/60">If you prefer it, feel free to also get in touch through any of the following channels:</p>
+      <ul class="mt-6 flex w-full justify-center gap-x-2 xl:w-auto xl:justify-start">
         {
           contactSocials.map((social) => (
             <li class="rounded-lg text-foreground/80 transition duration-200 hover:bg-accent hover:text-accent-foreground/80">
@@ -74,24 +51,16 @@ const labelClass = "text-base font-medium leading-none text-foreground";
     </div>
 
     <!-- OR divider -->
-    <div
-      class="grid-area-or flex w-full items-center justify-center gap-6 xl:h-full xl:flex-col"
-    >
+    <div class="grid-area-or flex w-full items-center justify-center gap-6 xl:h-full xl:flex-col">
       <span class="h-0.5 w-1/2 bg-muted xl:h-1/2 xl:w-0.5"></span>
-      <span class="py-6 text-base font-black text-muted-foreground xl:px-3 xl:py-0"
-        >OR</span
-      >
+      <span class="py-6 text-base font-black text-muted-foreground xl:px-3 xl:py-0">OR</span>
       <span class="h-0.5 w-1/2 bg-muted xl:h-1/2 xl:w-0.5"></span>
     </div>
 
     <!-- Form -->
     <div class="grid-area-form relative flex flex-col px-2 pb-12 pt-6 md:pb-0 xl:pt-0">
-      <p
-        class="mx-auto max-w-prose text-balance text-center font-header text-lg font-medium tracking-wide text-foreground/80"
-      >
-        Fill this form and I will get back to you <strong
-          >as soon as possible</strong
-        >
+      <p class="mx-auto max-w-prose text-balance text-center font-header text-lg font-medium tracking-wide text-foreground/80">
+        Fill this form and I will get back to you <strong>as soon as possible</strong>
       </p>
       <div class="absolute inset-x-10 inset-y-20 -z-10">
         <canvas
@@ -102,53 +71,24 @@ const labelClass = "text-base font-medium leading-none text-foreground";
           class="size-full opacity-0 transition-opacity duration-700"></canvas>
       </div>
 
-      <form
-        class="mb-6 mt-10 max-w-xl rounded-xl border border-primary/40 bg-[#0e0c0c] p-6 backdrop-blur-md sm:mx-auto"
-        data-contact-form
-      >
+      <form class="mb-6 mt-10 max-w-xl rounded-xl border border-primary/40 bg-[#0e0c0c] p-6 backdrop-blur-md sm:mx-auto" data-contact-form>
         <div class="grid grid-cols-4 gap-x-4 gap-y-5">
           <div class="space-y-2 col-start-1 col-span-4 sm:col-span-2">
             <label class={labelClass} for="name">Name</label>
-            <input
-              type="text"
-              class={inputClass}
-              placeholder="Bill Gates"
-              required
-              name="name"
-              id="name"
-            />
+            <input type="text" class={inputClass} placeholder="Bill Gates" required name="name" id="name" />
           </div>
           <div class="space-y-2 col-start-1 col-span-4 sm:col-start-3 sm:col-span-2">
             <label class={labelClass} for="email">Email</label>
-            <input
-              type="email"
-              class={inputClass}
-              placeholder="bill.gates@microsoft.com"
-              required
-              name="email"
-              id="email"
-            />
+            <input type="email" class={inputClass} placeholder="bill.gates@microsoft.com" required name="email" id="email" />
           </div>
           <div class="space-y-2 col-start-1 col-span-4">
             <label class={labelClass} for="subject">Subject</label>
-            <input
-              type="text"
-              class={inputClass}
-              placeholder="Regarding your latest project..."
-              required
-              name="subject"
-              id="subject"
-            />
+            <input type="text" class={inputClass} placeholder="Regarding your latest project..." required name="subject" id="subject" />
           </div>
           <div class="space-y-2 col-start-1 col-span-4">
             <label class={labelClass} for="message">Message</label>
-            <textarea
-              class={`${inputClass} min-h-[80px]`}
-              placeholder="I have a question about..."
-              required
-              rows="3"
-              name="message"
-              id="message"></textarea>
+            <textarea class={`${inputClass} min-h-20`} placeholder="I have a question about..." required rows="3" name="message" id="message"
+            ></textarea>
           </div>
         </div>
 
@@ -163,10 +103,7 @@ const labelClass = "text-base font-medium leading-none text-foreground";
           >
         </div>
       </form>
-      <small
-        class="z-10 text-center text-sm font-semibold text-muted-foreground xl:pb-0"
-        >I don't retain nor share any of your data.</small
-      >
+      <small class="z-10 text-center text-sm font-semibold text-muted-foreground xl:pb-0">I don't retain nor share any of your data.</small>
     </div>
   </div>
 </section>
