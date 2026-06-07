@@ -183,11 +183,9 @@
     overflow-x: clip;
     scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
     scrollbar-width: var(--scrollbar-width);
+    scroll-behavior: smooth;
     height: auto;
     width: var(--screen-safe-width);
-    @media (prefers-reduced-motion: no-preference) {
-      scroll-behavior: smooth;
-    }
   }
 
   body {
