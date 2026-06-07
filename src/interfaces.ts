@@ -1,13 +1,14 @@
-import type { icons } from "@data/icons";
+import type { icons } from '@data/icons';
+import type { TranslationKey } from '@i18n/ui';
 
 export interface NavLink {
-  label: string;
+  label: TranslationKey;
   href: string;
   icon: IconName;
 }
 
 export interface SocialLink {
-  label: string;
+  label: TranslationKey;
   href: string;
   icon: IconName;
 }
@@ -16,24 +17,24 @@ export interface Skill {
   icon: IconName;
 }
 export interface ExperienceEntry {
-  title: string;
+  title: TranslationKey;
   href: string;
-  location: string;
-  start: { label: string; datetime: string };
-  end: { label: string; datetime: string };
-  /** HTML paragraphs (verbatim, may contain inline markup). */
-  paragraphs: string[];
+  location: TranslationKey;
+  start: { label: TranslationKey; datetime: string };
+  end: { label: TranslationKey; datetime: string };
+  /** Translation keys whose resolved value is an HTML paragraph (verbatim, may contain inline markup). */
+  paragraphs: TranslationKey[];
   skills: Skill[];
 }
 export interface ProjectLink {
   href: string;
-  tippy: string;
+  tippy: TranslationKey;
   icon: IconName;
 }
 export interface ProjectMedia {
   cover: string; // fallback (png) src
   sources: { srcset: string; type: string }[]; // avif/webp/png
-  alt: string;
+  alt: TranslationKey;
   poster: string;
   videos: { src: string; type: string }[];
 }
@@ -41,9 +42,9 @@ export interface ProjectMedia {
 export interface Project {
   name: string;
   year: string;
-  blurb: string; // emoji + short tagline
+  blurb: TranslationKey; // emoji + short tagline
   links: ProjectLink[];
-  paragraphs: string[]; // HTML
+  paragraphs: TranslationKey[]; // HTML
   skills: Skill[];
   media: ProjectMedia;
 }

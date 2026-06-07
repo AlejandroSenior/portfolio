@@ -1,5 +1,9 @@
 ---
 import Icon from '@components/Icon.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <!-- Floating scroll-to-top button (revealed via scroll-driven animation) -->
@@ -9,8 +13,8 @@ import Icon from '@components/Icon.astro';
     tabindex="0"
     data-scroll-to-top
     data-scroll-top-btn
-    aria-label="Scroll To Top"
-    data-tippy-content="Scroll To Top"
+    aria-label={t('scrollToTop')}
+    data-tippy-content={t('scrollToTop')}
     class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 pointer-events-auto absolute -bottom-32 right-0 m-6 aspect-square size-12 min-h-12 min-w-12 rounded-full lg:m-12 xl:size-16 xl:min-h-16 xl:min-w-16 xl:p-2"
   >
     <Icon name="lucide:arrow-up" class="aspect-square size-6 min-h-6 min-w-6 xl:size-8" />

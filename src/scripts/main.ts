@@ -1,4 +1,5 @@
 import { initParticleCanvas } from './particles';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 /* ------------------------------------------------------------------ */
 /* Smooth scroll — rAF-based to bypass browser/CSS overflow quirks     */
@@ -135,10 +136,13 @@ if (projectCards.length) {
 function updateClock() {
   const now = new Date();
   const tz = 'Europe/Madrid';
+  const lang = getLangFromUrl(new URL(window.location.href));
+  const t = useTranslations(lang);
+  const locale = t('meta.locale');
 
   const clock = document.querySelector<HTMLElement>('[data-clock]');
   if (clock) {
-    clock.textContent = new Intl.DateTimeFormat('en-US', {
+    clock.textContent = new Intl.DateTimeFormat(locale, {
       timeZone: tz,
       hour: 'numeric',
       minute: '2-digit',
@@ -148,7 +152,7 @@ function updateClock() {
 
   const tzEl = document.querySelector<HTMLElement>('[data-tz]');
   if (tzEl) {
-    const parts = new Intl.DateTimeFormat('en-US', {
+    const parts = new Intl.DateTimeFormat(locale, {
       timeZone: tz,
       timeZoneName: 'shortOffset'
     }).formatToParts(now);
@@ -158,7 +162,7 @@ function updateClock() {
 
   const dateEl = document.querySelector<HTMLElement>('[data-date]');
   if (dateEl) {
-    dateEl.textContent = new Intl.DateTimeFormat('en-US', {
+    dateEl.textContent = new Intl.DateTimeFormat(locale, {
       timeZone: tz,
       weekday: 'long',
       month: 'long',
@@ -172,13 +176,13 @@ function updateClock() {
     const local = new Date(now.toLocaleString('en-US'));
     const diffMin = Math.round((madrid.getTime() - local.getTime()) / 60000);
     if (diffMin === 0) {
-      diffEl.textContent = 'Same time as you';
+      diffEl.textContent = t('about.location.sameTime');
     } else {
       const abs = Math.abs(diffMin);
       const h = Math.floor(abs / 60);
       const m = abs % 60;
       const span = [h ? `${h}h` : '', m ? `${m}m` : ''].filter(Boolean).join(' ');
-      diffEl.textContent = `${span} ${diffMin > 0 ? 'ahead of' : 'behind'} you`;
+      diffEl.textContent = `${span} ${diffMin > 0 ? t('about.location.ahead') : t('about.location.behind')}`;
     }
   }
 }

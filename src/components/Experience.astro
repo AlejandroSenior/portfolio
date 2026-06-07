@@ -3,10 +3,14 @@ import Icon from '@components/Icon.astro';
 import SectionHeading from '@components/SectionHeading.astro';
 import SkillBadge from '@components/SkillBadge.astro';
 import { experience } from '@data/site';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="experience" class="z-0 mx-auto max-w-5xl px-4 xs:px-6 sm:px-8" data-observed-section="1">
-  <SectionHeading title="Where I've worked" />
+  <SectionHeading title={t('experience.heading')} />
 
   <div
     class="timeline h-fit flex-col justify-center gap-8 ml-2 flex w-full items-start py-6 sm:ml-4 lg:ml-8"
@@ -36,12 +40,12 @@ import { experience } from '@data/site';
                         target="_blank"
                         rel="noopener noreferrer"
                         href={entry.href}
-                        aria-label={`Link to "${entry.title}" (Opens in a new tab)`}
+                        aria-label={`${t('a11y.linkTo')} "${t(entry.title)}" ${t('a11y.opensInNewTab')}`}
                         class="group"
                       >
                         <span>
                           <span class="absolute -inset-4 hidden rounded-lg lg:block" />
-                          <span> {entry.title} </span>
+                          <span> {t(entry.title)} </span>
                           <Icon
                             name="lucide:arrow-up-right"
                             class="relative bottom-0.5 right-px inline-block size-[0.8em] transition-transform duration-300 lg:group-hover:-translate-y-1 lg:group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1"
@@ -50,19 +54,19 @@ import { experience } from '@data/site';
                       </a>
                     </h3>
                     <div class="text-pretty text-lg font-semibold text-muted-foreground/70 transition-colors duration-200">
-                      <span>{entry.location}</span>
+                      <span>{t(entry.location)}</span>
                       <span class="opacity-50"> | </span>
                       <span>
-                        <time datetime={entry.start.datetime}>{entry.start.label}</time>
+                        <time datetime={entry.start.datetime}>{t(entry.start.label)}</time>
                         {' - '}
-                        <time datetime={entry.end.datetime}>{entry.end.label}</time>
+                        <time datetime={entry.end.datetime}>{t(entry.end.label)}</time>
                       </span>
                     </div>
                   </header>
 
                   <div class="space-y-[1lh]">
                     {entry.paragraphs.map((p) => (
-                      <p class="max-w-200 text-pretty text-lg text-foreground/80 group-hover:text-accent-foreground/80" set:html={p} />
+                      <p class="max-w-200 text-pretty text-lg text-foreground/80 group-hover:text-accent-foreground/80" set:html={t(p)} />
                     ))}
                   </div>
 

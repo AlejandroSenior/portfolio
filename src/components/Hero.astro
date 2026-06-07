@@ -1,9 +1,10 @@
 ---
 import Icon from '@components/Icon.astro';
 import { heroSocials } from '@data/site';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 
-const microwdLink =
-  '<span style="color: #ff0000; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span>';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="mx-auto max-w-5xl content-center px-4 xs:px-6 sm:px-8">
@@ -12,10 +13,10 @@ const microwdLink =
   >
     <div>
       <h1 class="text-balance font-header">
-        <span class="block text-5xl font-extrabold tracking-wide opacity-90"> Hey! I'm Alejandro Senior </span>
+        <span class="block text-5xl font-extrabold tracking-wide opacity-90">{t('hero.greeting')}</span>
       </h1>
       <p class="mt-4 block text-3xl font-bold text-foreground/50">
-        I'm a <strong>frontend</strong> developer.
+        <Fragment set:html={t('hero.role')} />
       </p>
     </div>
     <div
@@ -32,12 +33,9 @@ const microwdLink =
 
   <div>
     <p class="mt-12 max-w-[58ch] text-pretty text-left text-lg text-foreground/65 xs:text-xl">
-      Specialized in frontend development with <strong>Vue.js</strong>, yet passionate about learning different technologies and continuously
-      improving products and user experiences. Currently working at <a href="https://www.microwd.es" target="_blank"
-        ><strong set:html={microwdLink} /></a
-      > as <strong>Frontend Lead</strong>, a role I started in July 2022.
+      <Fragment set:html={t('hero.bio')} />
       <br /><br />
-      My last name may say <em>Senior</em> — but there's always more to learn, and honestly, that's the best part.
+      <Fragment set:html={t('hero.tagline')} />
     </p>
 
     <div class="mt-8 @container">
@@ -49,9 +47,9 @@ const microwdLink =
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-tippy-content={social.label}
+                  data-tippy-content={t(social.label)}
                   href={social.href}
-                  aria-label={`Link to "${social.label}" (Opens in a new tab)`}
+                  aria-label={`${t('a11y.linkTo')} "${t(social.label)}" ${t('a11y.opensInNewTab')}`}
                   class="group"
                 >
                   <Icon name={social.icon} class="box-content size-6 p-2 text-current sm:size-7 md:size-8" />

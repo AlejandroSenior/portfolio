@@ -1,6 +1,14 @@
 ---
 import Icon from '@components/Icon.astro';
 import { navLinks } from '@data/site';
+import { languages, type Lang } from '@i18n/ui';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const otherLang = (Object.keys(languages) as Lang[]).find((code) => code !== lang) ?? lang;
+const switchLangHref = translatePath('/', otherLang) + Astro.url.hash;
 ---
 
 <header id="site-header" class="fixed top-0 z-50 w-full content-center duration-300 animate-fade-down opacity-0 animate-delay-200">
@@ -15,11 +23,11 @@ import { navLinks } from '@data/site';
                 onclick={`window.smoothScrollTo('${link.href}', event)`}
                 data-nav-link="header"
                 href={link.href}
-                aria-label={`Link to "${link.label.toLowerCase()}"`}
+                aria-label={`${t('a11y.linkTo')} "${t(link.label).toLowerCase()}"`}
                 class="group font-medium text-base inline-flex items-center justify-center gap-x-2"
               >
                 <Icon name={link.icon} />
-                <span>{link.label}</span>
+                <span>{t(link.label)}</span>
               </a>
             </li>
           ))
@@ -36,7 +44,7 @@ import { navLinks } from '@data/site';
       aria-controls="mobile-menu"
       class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-accent-foreground h-10 md:hidden aspect-square p-0.5"
     >
-      <span class="sr-only">Menu</span>
+      <span class="sr-only">{t('nav.menu')}</span>
       <svg class="pointer-events-none h-6 w-6 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
         <rect y="2" x="7" width="9" height="2" rx="1"></rect>
         <rect y="7" width="16" height="2" rx="1"></rect>
@@ -45,9 +53,12 @@ import { navLinks } from '@data/site';
     </button>
 
     <!-- Language selector -->
-    <button
-      type="button"
-      aria-label="Language"
+    <a
+      href={switchLangHref}
+      hreflang={otherLang}
+      lang={otherLang}
+      aria-label={`${t('nav.language')}: ${languages[otherLang]}`}
+      data-tippy-content={languages[otherLang]}
       class="hidden md:flex h-10 items-center justify-end gap-x-2 px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 w-fit text-foreground/80"
     >
       <svg
@@ -69,24 +80,8 @@ import { navLinks } from '@data/site';
         <path d="m22 22-5-10-5 10"></path>
         <path d="M14 18h6"></path>
       </svg>
-      <span class="font-semibold tracking-wide">ENG</span>
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="mb-0.5 h-4 w-4 opacity-50"
-        >
-          <path d="m6 9 6 6 6-6"></path>
-        </svg>
-      </div>
-    </button>
+      <span class="font-semibold tracking-wide">{otherLang.toUpperCase()}</span>
+    </a>
   </div>
 </header>
 
@@ -107,15 +102,45 @@ import { navLinks } from '@data/site';
                 onclick={`window.smoothScrollTo('${link.href}', event)`}
                 data-nav-link="menu"
                 href={link.href}
-                aria-label={`Link to "${link.label.toLowerCase()}"`}
+                aria-label={`${t('a11y.linkTo')} "${t(link.label).toLowerCase()}"`}
                 class="group font-medium inline-flex items-center justify-center gap-x-4 text-2xl"
               >
                 <Icon name={link.icon} />
-                <span>{link.label}</span>
+                <span>{t(link.label)}</span>
               </a>
             </li>
           ))
         }
+        <li>
+          <a
+            href={switchLangHref}
+            hreflang={otherLang}
+            lang={otherLang}
+            aria-label={`${t('nav.language')}: ${languages[otherLang]}`}
+            class="group font-medium inline-flex items-center justify-center gap-x-4 text-2xl"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-[1em]"
+            >
+              <path d="m5 8 6 6"></path>
+              <path d="m4 14 6-6 2-3"></path>
+              <path d="M2 5h12"></path>
+              <path d="M7 2h1"></path>
+              <path d="m22 22-5-10-5 10"></path>
+              <path d="M14 18h6"></path>
+            </svg>
+            <span>{languages[otherLang]}</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

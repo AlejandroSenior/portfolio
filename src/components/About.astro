@@ -1,41 +1,55 @@
 ---
 import Icon from '@components/Icon.astro';
 import SectionHeading from '@components/SectionHeading.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import type { TranslationKey } from '@i18n/ui';
 
-const loves = [
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+interface Love {
+  label: TranslationKey;
+  img: string;
+  sources: { srcset: string; type: string }[];
+  alt: TranslationKey;
+  wrapper: string;
+  label_pos: string;
+}
+
+const loves: Love[] = [
   {
-    label: 'Deporte',
+    label: 'about.loves.sport',
     img: '/images/emojis/sport/sport.png',
     sources: [
       { srcset: '/images/emojis/sport/sport.png', type: 'image/png' },
       { srcset: '/images/emojis/sport/sport.png', type: 'image/png' },
       { srcset: '/images/emojis/sport/sport.png', type: 'image/png' }
     ],
-    alt: 'Sport Emoji',
+    alt: 'about.loves.sportAlt',
     wrapper: 'relative flex -rotate-12 animate-float flex-col items-center -space-y-3 self-start justify-self-center',
     label_pos: 'inset-x-0 -z-10'
   },
   {
-    label: 'Tecnología',
+    label: 'about.loves.tech',
     img: '/_astro/laptop.DgIfOJrS_ZrCqUY.png',
     sources: [
       { srcset: '/_astro/laptop.DgIfOJrS_Oeh6f.avif', type: 'image/avif' },
       { srcset: '/_astro/laptop.DgIfOJrS_1ULEWq.webp', type: 'image/webp' },
       { srcset: '/_astro/laptop.DgIfOJrS_ZrCqUY.png', type: 'image/png' }
     ],
-    alt: 'Laptop Emoji',
+    alt: 'about.loves.techAlt',
     wrapper: 'relative flex animate-float flex-col items-center -space-y-3 self-start justify-self-center animate-delay-700 mt-10',
     label_pos: 'inset-x-0 -z-10'
   },
   {
-    label: 'Videojuegos',
+    label: 'about.loves.gaming',
     img: '/_astro/gamepad.iYuC9gqD_VncHo.png',
     sources: [
       { srcset: '/_astro/gamepad.iYuC9gqD_HJz52.avif', type: 'image/avif' },
       { srcset: '/_astro/gamepad.iYuC9gqD_1pFcvy.webp', type: 'image/webp' },
       { srcset: '/_astro/gamepad.iYuC9gqD_VncHo.png', type: 'image/png' }
     ],
-    alt: 'Gamepad Emoji',
+    alt: 'about.loves.gamingAlt',
     wrapper: 'relative flex rotate-12 animate-float flex-col items-center -space-y-3 self-start justify-self-center animate-delay-700',
     label_pos: 'inset-x-0 -z-10'
   }
@@ -43,7 +57,7 @@ const loves = [
 ---
 
 <section id="about" class="mx-auto max-w-screen-xl px-4 xs:px-6 sm:px-8" data-observed-section="3">
-  <SectionHeading title="A little more about me" />
+  <SectionHeading title={t('about.heading')} />
 
   <div class="my-6 grid grid-cols-10 justify-center gap-6 sm:mx-4 *:overflow-clip *:rounded-xl *:border *:bg-background">
     <!-- At Work -->
@@ -55,7 +69,7 @@ const loves = [
           <source srcset="/_astro/laptop.DgIfOJrS_ZrCqUY.png" type="image/png" />
           <img
             src="/_astro/laptop.DgIfOJrS_ZrCqUY.png"
-            alt="Laptop Emoji"
+            alt={t('about.work.emojiAlt')}
             class="mt-2 size-[1.3em]"
             width="64"
             height="64"
@@ -63,18 +77,13 @@ const loves = [
             decoding="async"
           />
         </picture>
-        <h3 class="mt-3">At Work</h3>
+        <h3 class="mt-3">{t('about.work.heading')}</h3>
       </header>
       <p class="mt-8 text-pretty text-lg text-foreground/80">
-        With over 6 years of experience in frontend development, I work with a strong <strong>attention to detail</strong> and a genuine focus on
-        <strong>product quality</strong>. I've grown from developer to leading the frontend team, becoming the <strong
-          >technical reference</strong
-        > for all UI-related decisions.
+        <Fragment set:html={t('about.work.p1')} />
       </p>
       <p class="mb-2 mt-6 text-pretty text-lg text-foreground/80 fold:mb-4 sm:mb-2">
-        Building <b>well-structured, maintainable interfaces</b> that are also enjoyable to use is what drives me — and I'm always looking for ways
-        to improve the codebase, the workflow, or the
-        <strong>user experience</strong>.
+        <Fragment set:html={t('about.work.p2')} />
       </p>
       <div class="relative overflow-hidden p-[20%] [@media(850px<=width<=920px)]:p-[18%] [@media(921px<=width<=1024px)]:p-[17%]">
         <picture>
@@ -83,7 +92,7 @@ const loves = [
           <source srcset="/_astro/method.av8F2PZO_5s01E.png" type="image/png" />
           <img
             src="/_astro/method.av8F2PZO_5s01E.png"
-            alt="My approach with code"
+            alt={t('about.work.approachAlt')}
             class="absolute inset-0 mx-auto w-fit opacity-50 lg:mt-2 xl:mt-0"
             data-mask
             width="720"
@@ -106,23 +115,20 @@ const loves = [
             src="/images/emojis/hand/hand.gif"
             width="64"
             height="64"
-            alt="Waving Hand Emoji"
+            alt={t('about.personal.emojiAlt')}
             decoding="async"
             loading="lazy"
             class="size-[1.5em]"
           />
         </picture>
-        <h3 class="mt-3">My personal side</h3>
+        <h3 class="mt-3">{t('about.personal.heading')}</h3>
       </header>
       <div>
         <p class="mt-8 text-pretty text-lg text-foreground/80">
-          The three words that best define me are <strong>curious</strong>,
-          <strong>committed</strong>, and <strong>collaborative</strong>. I find great satisfaction in understanding things deeply, not just
-          making them work.
+          <Fragment set:html={t('about.personal.p1')} />
         </p>
         <p class="mt-6 text-pretty text-lg text-foreground/80">
-          I enjoy <strong>sharing knowledge</strong> and growing alongside teammates. And off the screen, you'll find me doing some sport, diving into
-          a game, or exploring whatever new tech has caught my attention.
+          <Fragment set:html={t('about.personal.p2')} />
         </p>
       </div>
       <div class="grid grid-cols-3 grid-rows-1 gap-x-8 pt-8 sm:gap-x-2">
@@ -133,15 +139,15 @@ const loves = [
                 {love.sources.map((s) => (
                   <source srcset={s.srcset} type={s.type} />
                 ))}
-                <img src={love.img} alt={love.alt} loading="lazy" decoding="async" width="70" />
+                <img src={love.img} alt={t(love.alt)} loading="lazy" decoding="async" width="70" />
               </picture>
               <p
                 class={`${love.label_pos} mt-2 min-h-fit min-w-max rounded-full border bg-[#1d1b1b] px-[1em] py-[0.2em] text-center text-xs sm:text-sm`}
               >
                 <span class="mt-1 inline-flex items-center gap-x-2">
                   <Icon name="heart" class="size-[1em]" />
-                  <span class="sr-only">Love</span>
-                  <span class="font-medium"> {love.label} </span>
+                  <span class="sr-only">{t('a11y.love')}</span>
+                  <span class="font-medium"> {t(love.label)} </span>
                 </span>
               </p>
             </div>
@@ -159,7 +165,7 @@ const loves = [
           <source srcset="/_astro/house.BGi-6pIY_ZKOpPe.png" type="image/png" />
           <img
             src="/_astro/house.BGi-6pIY_ZKOpPe.png"
-            alt="House Emoji"
+            alt={t('about.location.emojiAlt')}
             class="size-[1.4em]"
             width="64"
             height="64"
@@ -167,12 +173,12 @@ const loves = [
             decoding="async"
           />
         </picture>
-        <h3 class="mt-2 capitalize">Location</h3>
+        <h3 class="mt-2 capitalize">{t('about.location.heading')}</h3>
       </header>
       <div class="mt-8 grid grid-cols-1 grid-rows-[1fr,auto,1fr] gap-y-5 @lg:grid-cols-[auto,auto,auto] @lg:grid-rows-1">
         <div class="self-end">
           <p class="text-center text-3xl font-medium" data-where>
-            Based in <strong>Madrid</strong>
+            <Fragment set:html={t('about.location.basedIn')} />
             <small class="mt-2 block text-base font-normal text-foreground/60" data-time-diff>—</small>
           </p>
         </div>

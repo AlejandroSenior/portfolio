@@ -3,34 +3,31 @@ import type { ExperienceEntry, NavLink, Project, SocialLink } from 'src/interfac
 export const EMAIL = 'alejandrosenior@outlook.es';
 
 export const navLinks: NavLink[] = [
-  { label: 'Experience', href: '#experience', icon: 'lucide:briefcase' },
-  { label: 'Projects', href: '#projects', icon: 'lucide:folder-git' },
-  { label: 'About', href: '#about', icon: 'lucide:user' },
-  { label: 'Contact', href: '#contact', icon: 'lucide:mail' }
+  { label: 'nav.experience', href: '#experience', icon: 'lucide:briefcase' },
+  { label: 'nav.projects', href: '#projects', icon: 'lucide:folder-git' },
+  { label: 'nav.about', href: '#about', icon: 'lucide:user' },
+  { label: 'nav.contact', href: '#contact', icon: 'lucide:mail' }
 ];
 
 export const heroSocials: SocialLink[] = [
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/alejandrosenior', icon: 'lucide:linkedin' },
-  { label: 'GitHub', href: 'https://github.com/AlejandroSenior', icon: 'lucide:github' },
-  { label: 'Email', href: `mailto:${EMAIL}`, icon: 'lucide:mail' },
-  { label: 'Resume', href: '/CV-Alejandro-Senior.pdf', icon: 'lucide:scroll' }
+  { label: 'social.linkedin', href: 'https://linkedin.com/in/alejandrosenior', icon: 'lucide:linkedin' },
+  { label: 'social.github', href: 'https://github.com/AlejandroSenior', icon: 'lucide:github' },
+  { label: 'social.email', href: `mailto:${EMAIL}`, icon: 'lucide:mail' },
+  { label: 'social.resume', href: '/CV-Alejandro-Senior.pdf', icon: 'lucide:scroll' }
 ];
 
-export const contactSocials: SocialLink[] = [{ label: 'LinkedIn', href: 'https://linkedin.com/in/alejandrosenior', icon: 'lucide:linkedin' }];
+export const contactSocials: SocialLink[] = [
+  { label: 'social.linkedin', href: 'https://linkedin.com/in/alejandrosenior', icon: 'lucide:linkedin' }
+];
 
 export const experience: ExperienceEntry[] = [
   {
-    title: 'Frontend Developer · Microwd',
+    title: 'experience.microwd.title',
     href: 'https://www.microwd.es',
-    location: 'Madrid, Spain',
-    start: { label: 'July 2022', datetime: '2022-07' },
-    end: { label: 'May 2024', datetime: '2024-5' },
-    paragraphs: [
-      `<q>Technology becomes meaningful when it helps create opportunities for others.</q>`,
-      `As part of a fintech platform focused on micro-investment opportunities, I have been responsible for building and maintaining user-facing applications that connect investors with projects in emerging markets.`,
-      `My work includes developing new features, improving user experience, integrating external services, and ensuring the platform remains scalable and maintainable as the product grows. I collaborate closely with product and backend teams, contributing not only to implementation but also to technical decision-making and product evolution.`,
-      `Over the years, I have taken ownership of complete projects, from initial idea and architecture to deployment and monitoring in production.`
-    ],
+    location: 'experience.microwd.location',
+    start: { label: 'experience.microwd.start', datetime: '2022-07' },
+    end: { label: 'experience.microwd.end', datetime: '2024-5' },
+    paragraphs: ['experience.microwd.p1', 'experience.microwd.p2', 'experience.microwd.p3', 'experience.microwd.p4'],
     skills: [
       { label: 'Communication', icon: 'skills/communication' },
       { label: 'Vue', icon: 'skills/vue' },
@@ -42,16 +39,16 @@ export const experience: ExperienceEntry[] = [
     ]
   },
   {
-    title: 'Software Developer Consultant · Animasoluciones ↗',
+    title: 'experience.animasoluciones.title',
     href: 'https://animasoluciones.es',
-    location: 'Madrid, Spain',
-    start: { label: 'julio 2019', datetime: '2020-07' },
-    end: { label: 'julio 2022', datetime: '2022-07' },
+    location: 'experience.animasoluciones.location',
+    start: { label: 'experience.animasoluciones.start', datetime: '2020-07' },
+    end: { label: 'experience.animasoluciones.end', datetime: '2022-07' },
     paragraphs: [
-      `<q>The fastest way to grow as a developer is to solve different problems every day.</q>`,
-      `During my time at the consultancy, I worked on a variety of client projects, each with unique technical and business challenges. This experience allowed me to develop a strong adaptability mindset and a broad understanding of software development.`,
-      `My responsibilities included building web applications, implementing new features, integrating third-party services, and collaborating directly with clients to translate business requirements into technical solutions.`,
-      `Working across multiple projects and technologies helped me strengthen both my technical skills and my ability to deliver value in dynamic environments.`
+      'experience.animasoluciones.p1',
+      'experience.animasoluciones.p2',
+      'experience.animasoluciones.p3',
+      'experience.animasoluciones.p4'
     ],
     skills: [
       { label: 'Communication', icon: 'skills/communication' },
@@ -67,15 +64,12 @@ export const projects: Project[] = [
   {
     name: 'Imcarrows',
     year: '2025',
-    blurb: '🚗 Importación de coches desde Alemania',
+    blurb: 'projects.imcarrows.blurb',
     links: [
-      { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'Source Code', icon: 'lucide:github' },
-      { href: 'https://www.imcarrows.com', tippy: 'Try it out!', icon: 'lucide:external-link' }
+      { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'projects.imcarrows.linkSource', icon: 'lucide:github' },
+      { href: 'https://www.imcarrows.com', tippy: 'projects.imcarrows.linkDemo', icon: 'lucide:external-link' }
     ],
-    paragraphs: [
-      `Desarrollé íntegramente Imcarrows, una web orientada a la captación de clientes interesados en importar vehículos desde Alemania a España. El objetivo del proyecto era explicar de forma clara el servicio completo —búsqueda de vehículos, inspección técnica, transporte y matriculación— y facilitar el contacto con potenciales clientes mediante formularios optimizados para conversión.`,
-      `La empresa es de un buen amigo y me alegré poder ayudarle con su principal herramienta.`
-    ],
+    paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
     skills: [
       { label: 'TypeScript', icon: 'skills/typescript' },
       { label: 'Git', icon: 'skills/git' }
@@ -83,7 +77,7 @@ export const projects: Project[] = [
     media: {
       cover: '/_astro/imcarrows-cover.webp',
       sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
-      alt: 'Preview of the project "Imcarrows"',
+      alt: 'projects.imcarrows.imageAlt',
       poster: '/_astro/imcarrows-website.gif',
       videos: [{ src: '/_astro/imcarrows-website.gif', type: 'video/gif' }]
     }

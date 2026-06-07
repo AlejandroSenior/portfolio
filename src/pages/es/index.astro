@@ -1,0 +1,31 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/Header.astro';
+import Hero from '@components/Hero.astro';
+import Experience from '@components/Experience.astro';
+import Projects from '@components/Projects.astro';
+import About from '@components/About.astro';
+import Contact from '@components/Contact.astro';
+import Footer from '@components/Footer.astro';
+import ScrollWidgets from '@components/ScrollWidgets.astro';
+---
+
+<Layout>
+  <Header />
+  <div class="animate-fade-down opacity-0 animate-delay-200 mt-20">
+    <main class="z-0 space-y-36 pt-16 lg:space-y-48">
+      <Hero />
+      <Experience />
+      <Projects />
+      <About />
+      <Contact />
+    </main>
+    <Footer />
+  </div>
+
+  <ScrollWidgets />
+</Layout>
+
+<script>
+  import '../../scripts/main.ts';
+</script>

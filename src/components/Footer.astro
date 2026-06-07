@@ -1,28 +1,20 @@
 ---
-import Icon from "@components/Icon.astro";
+import Icon from '@components/Icon.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer
   class="relative z-10 mx-auto max-w-screen-xl border-t border-border py-6"
 >
   <p class="w-full text-balance px-4 text-center text-base" data-footer-note>
-    <span> Built with </span>
-    <span class="sr-only">Love</span>
+    <span> {t('footer.builtWith')} </span>
+    <span class="sr-only">{t('a11y.love')}</span>
     <Icon name="heart" class="mx-px mb-px inline animate-beat" />
     <span>
-      by <strong>Alejandro Senior</strong> using <a
-        href="https://astro.build"
-        target="_blank"
-        rel="noopener noreferrer">Astro</a
-      >, <a href="https://svelte.dev" target="_blank" rel="noopener noreferrer"
-        >Svelte</a
-      >, and <a href="https://react.dev" target="_blank" rel="noopener noreferrer"
-        >React</a
-      >. Deployed on <a
-        href="https://cloudflare.com"
-        target="_blank"
-        rel="noopener noreferrer">Cloudflare</a
-      >.
+      <Fragment set:html={t('footer.credits')} />
     </span>
   </p>
 </footer>
