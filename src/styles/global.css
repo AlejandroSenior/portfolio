@@ -398,47 +398,6 @@ p[data-where] {
   font-weight: 700;
 }
 
-/* ------- Contact form ------- */
-[data-contact-form] {
-  box-shadow: 0 0 100px -45px hsl(var(--primary) / 1);
-  clip-path: inset(0 -350px 0 -15px);
-}
-.contact-section-grid {
-  display: grid;
-  grid-template-areas: "mail" "or" "form" "divider" "links";
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, auto);
-}
-.grid-area-links {
-  grid-area: links;
-}
-.grid-area-divider {
-  grid-area: divider;
-}
-.grid-area-or {
-  grid-area: or;
-}
-.grid-area-form {
-  grid-area: form;
-}
-.grid-area-mail {
-  grid-area: mail;
-}
-@media (min-width: 768px) {
-  .contact-section-grid {
-    grid-template-areas: "mail divider links" "or or or" "form form form";
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: repeat(3, auto);
-  }
-}
-@media (min-width: 1280px) {
-  .contact-section-grid {
-    grid-template-areas: "mail or form" "divider or form" "links or form";
-    grid-template-columns: minmax(auto, 28rem) auto 1fr;
-    grid-template-rows: 1fr auto 1fr;
-  }
-}
-
 /* ------- Scroll progress bar + scroll-to-top (scroll-driven) ------- */
 @keyframes reveal-up {
   to {

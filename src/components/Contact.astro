@@ -7,116 +7,40 @@ import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const inputClass =
-  'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:min-h-12';
-const labelClass = 'text-base font-medium leading-none text-foreground';
+const linkedin = contactSocials[0];
+
+const ctaClass =
+  'inline-flex h-12 w-full items-center justify-center gap-x-3 whitespace-nowrap rounded-md px-6 text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:w-auto';
 ---
 
 <section id="contact" class="z-0 mx-auto max-w-screen-xl px-4 xs:px-6 sm:px-8" data-astro-cid-4nf3vys4 data-observed-section="4">
   <SectionHeading title={t('contact.heading')} />
 
-  <div class="contact-section-grid mt-6 pb-18 sm:mx-4">
-    <!-- Email -->
-    <div class="grid-area-mail px-8 text-center font-header sm:text-balance xl:self-center xl:px-0 xl:text-left">
-      <p class="text-2xl font-medium">
-        <Fragment set:html={t('contact.mail.title')} />
-      </p>
-      <p class="mt-8 text-lg text-foreground/60">
-        <span>{t('contact.mail.body')}</span>
-        <a href={`mailto:${EMAIL}`} class="mt-7 flex items-center justify-center gap-x-4 py-2 text-primary/80 xl:justify-start">
-          <Icon name="lucide:mail" class="box-content inline-block size-[1.2em]" />
-          <span class="hover:underline">{EMAIL}</span>
-        </a>
-      </p>
-    </div>
+  <div class="mx-auto mt-6 max-w-xl pb-18 text-center">
+    <p class="text-balance font-header text-lg text-foreground/65 sm:text-xl">
+      <Fragment set:html={t('contact.intro')} />
+    </p>
 
-    <div class="grid-area-divider inline-block h-0.5 w-full bg-muted md:h-full md:w-0.5 xl:h-0.5 xl:w-full xl:bg-clip-content xl:pr-3"></div>
+    <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a
+        href={linkedin.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${t('a11y.linkTo')} "${t(linkedin.label)}" ${t('a11y.opensInNewTab')}`}
+        class={`${ctaClass} bg-primary text-primary-foreground hover:bg-primary/90`}
+      >
+        <Icon name={linkedin.icon} class="size-5" />
+        {t('contact.linkedin')}
+      </a>
 
-    <!-- Social channels -->
-    <div class="grid-area-links px-8 pt-12 text-center font-header sm:text-balance md:py-0 xl:self-center xl:px-0 xl:text-left">
-      <p class="text-2xl font-medium">
-        <Fragment set:html={t('contact.links.title')} />
-      </p>
-      <p class="mt-8 text-lg text-foreground/60">{t('contact.links.body')}</p>
-      <ul class="mt-6 flex w-full justify-center gap-x-2 xl:w-auto xl:justify-start">
-        {
-          contactSocials.map((social) => (
-            <li class="rounded-lg text-foreground/80 transition duration-200 hover:bg-accent hover:text-accent-foreground/80">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                data-tippy-content={t(social.label)}
-                href={social.href}
-                aria-label={`${t('a11y.linkTo')} "${t(social.label)}" ${t('a11y.opensInNewTab')}`}
-                class="group"
-              >
-                <Icon name={social.icon} class="box-content size-8 p-2 text-current" />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-
-    <!-- OR divider -->
-    <div class="grid-area-or flex w-full items-center justify-center gap-6 xl:h-full xl:flex-col">
-      <span class="h-0.5 w-1/2 bg-muted xl:h-1/2 xl:w-0.5"></span>
-      <span class="py-6 text-base font-black text-muted-foreground xl:px-3 xl:py-0">{t('contact.or')}</span>
-      <span class="h-0.5 w-1/2 bg-muted xl:h-1/2 xl:w-0.5"></span>
-    </div>
-
-    <!-- Form -->
-    <div class="grid-area-form relative flex flex-col px-2 pb-12 pt-6 md:pb-0 xl:pt-0">
-      <p class="mx-auto max-w-prose text-balance text-center font-header text-lg font-medium tracking-wide text-foreground/80">
-        <Fragment set:html={t('contact.form.intro')} />
-      </p>
-      <div class="absolute inset-x-10 inset-y-20 -z-10">
-        <canvas
-          data-particle-canvas
-          data-quantity="140"
-          data-color="rgb(250, 204, 21)"
-          aria-hidden="true"
-          class="size-full opacity-0 transition-opacity duration-700"></canvas>
-      </div>
-
-      <form class="mb-6 mt-10 max-w-xl rounded-xl border border-primary/40 bg-[#0e0c0c] p-6 backdrop-blur-md sm:mx-auto" data-contact-form>
-        <div class="grid grid-cols-4 gap-x-4 gap-y-5">
-          <div class="space-y-2 col-start-1 col-span-4 sm:col-span-2">
-            <label class={labelClass} for="name">{t('contact.form.name')}</label>
-            <input type="text" class={inputClass} placeholder={t('contact.form.namePlaceholder')} required name="name" id="name" />
-          </div>
-          <div class="space-y-2 col-start-1 col-span-4 sm:col-start-3 sm:col-span-2">
-            <label class={labelClass} for="email">{t('contact.form.email')}</label>
-            <input type="email" class={inputClass} placeholder={t('contact.form.emailPlaceholder')} required name="email" id="email" />
-          </div>
-          <div class="space-y-2 col-start-1 col-span-4">
-            <label class={labelClass} for="subject">{t('contact.form.subject')}</label>
-            <input type="text" class={inputClass} placeholder={t('contact.form.subjectPlaceholder')} required name="subject" id="subject" />
-          </div>
-          <div class="space-y-2 col-start-1 col-span-4">
-            <label class={labelClass} for="message">{t('contact.form.message')}</label>
-            <textarea
-              class={`${inputClass} min-h-20`}
-              placeholder={t('contact.form.messagePlaceholder')}
-              required
-              rows="3"
-              name="message"
-              id="message"></textarea>
-          </div>
-        </div>
-
-        <div class="mt-8 flex w-full flex-col justify-start gap-4 [@media(width>=415px)]:flex-row">
-          <button
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full sm:h-12 [@media(width>=415px)]:w-1/2"
-            type="submit">{t('contact.form.send')}</button
-          >
-          <button
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full sm:h-12 [@media(width>=415px)]:w-1/2"
-            type="reset">{t('contact.form.reset')}</button
-          >
-        </div>
-      </form>
-      <small class="z-10 text-center text-sm font-semibold text-muted-foreground xl:pb-0">{t('contact.privacyNote')}</small>
+      <a
+        href={`mailto:${EMAIL}`}
+        aria-label={`${t('a11y.linkTo')} "${t('social.email')}"`}
+        class={`${ctaClass} group border border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground`}
+      >
+        <Icon name="lucide:mail" class="size-5" />
+        <span class="group-hover:underline">{EMAIL}</span>
+      </a>
     </div>
   </div>
 </section>

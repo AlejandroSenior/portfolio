@@ -92,23 +92,9 @@ export const ui = {
     'about.location.behind': 'behind you',
 
     'contact.heading': 'Shoot me a message',
-    'contact.mail.title': 'Contact me at <strong>any moment.</strong>',
-    'contact.mail.body': 'Whether you have a question, a project in mind or just want to say hi, you can reach me at:',
-    'contact.links.title': 'Thank you for <strong>your time!</strong>',
-    'contact.links.body': 'If you prefer it, feel free to also get in touch through any of the following channels:',
-    'contact.or': 'OR',
-    'contact.form.intro': 'Fill this form and I will get back to you <strong>as soon as possible</strong>',
-    'contact.form.name': 'Name',
-    'contact.form.namePlaceholder': 'Bill Gates',
-    'contact.form.email': 'Email',
-    'contact.form.emailPlaceholder': 'bill.gates@microsoft.com',
-    'contact.form.subject': 'Subject',
-    'contact.form.subjectPlaceholder': 'Regarding your latest project...',
-    'contact.form.message': 'Message',
-    'contact.form.messagePlaceholder': 'I have a question about...',
-    'contact.form.send': 'Send',
-    'contact.form.reset': 'Reset',
-    'contact.privacyNote': "I don't retain nor share any of your data.",
+    'contact.intro':
+      'Whether you have a question, a project in mind or just want to say hi — <strong>I would love to hear from you.</strong> Connect with me on LinkedIn or drop me an email.',
+    'contact.linkedin': 'Connect on LinkedIn',
 
     'footer.builtWith': 'Built with',
     'footer.credits': `by <strong>Alejandro Senior</strong> using <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>, <a href="https://svelte.dev" target="_blank" rel="noopener noreferrer">Svelte</a>, and <a href="https://react.dev" target="_blank" rel="noopener noreferrer">React</a>. Deployed on <a href="https://cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare</a>.`,
@@ -134,7 +120,7 @@ export const ui = {
     'a11y.love': 'Cariño',
 
     'hero.greeting': '¡Hola! Soy Alejandro Senior',
-    'hero.role': 'Soy desarrollador <strong>frontend</strong>.',
+    'hero.role': 'Desarrollador <strong>frontend</strong>.',
     'hero.bio': `Especializado en desarrollo frontend con <strong>Vue.js</strong>, aunque me apasiona aprender tecnologías nuevas y mejorar continuamente los productos y la experiencia de usuario. Actualmente trabajo en <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #ff0000; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> como <strong>Frontend Lead</strong>, un puesto que ocupo desde julio de 2022.`,
     'hero.tagline': `Puede que mi apellido diga <em>Senior</em>, pero siempre queda algo nuevo por aprender — y, sinceramente, esa es la mejor parte.`,
 
@@ -197,26 +183,12 @@ export const ui = {
     'about.location.behind': 'por detrás de ti',
 
     'contact.heading': 'Envíame un mensaje',
-    'contact.mail.title': 'Contacta conmigo <strong>cuando quieras.</strong>',
-    'contact.mail.body': 'Si tienes alguna pregunta, un proyecto en mente o simplemente quieres saludar, puedes escribirme a:',
-    'contact.links.title': '¡Gracias por <strong>tu tiempo!</strong>',
-    'contact.links.body': 'Si lo prefieres, también puedes contactar conmigo a través de cualquiera de estos canales:',
-    'contact.or': 'O',
-    'contact.form.intro': 'Rellena este formulario y te responderé <strong>lo antes posible</strong>',
-    'contact.form.name': 'Nombre',
-    'contact.form.namePlaceholder': 'Bill Gates',
-    'contact.form.email': 'Correo electrónico',
-    'contact.form.emailPlaceholder': 'bill.gates@microsoft.com',
-    'contact.form.subject': 'Asunto',
-    'contact.form.subjectPlaceholder': 'Sobre tu último proyecto...',
-    'contact.form.message': 'Mensaje',
-    'contact.form.messagePlaceholder': 'Tengo una pregunta sobre...',
-    'contact.form.send': 'Enviar',
-    'contact.form.reset': 'Restablecer',
-    'contact.privacyNote': 'No guardo ni comparto tus datos con nadie.',
+    'contact.intro':
+      'Si tienes alguna pregunta, un proyecto en mente o simplemente quieres saludar — <strong>me encantaría saber de ti.</strong> Conecta conmigo en LinkedIn o escríbeme un correo.',
+    'contact.linkedin': 'Conectar en LinkedIn',
 
     'footer.builtWith': 'Hecho con',
-    'footer.credits': `por <strong>Alejandro Senior</strong> usando <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>, <a href="https://svelte.dev" target="_blank" rel="noopener noreferrer">Svelte</a> y <a href="https://react.dev" target="_blank" rel="noopener noreferrer">React</a>. Desplegado en <a href="https://cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare</a>.`,
+    'footer.credits': `por <strong>Alejandro Senior</strong>. Desplegado en <a href="https://cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare</a>.`,
 
     scrollToTop: 'Volver arriba'
   }

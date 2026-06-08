@@ -1,4 +1,3 @@
-import { initParticleCanvas } from './particles';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 /* ------------------------------------------------------------------ */
@@ -193,17 +192,3 @@ setInterval(updateClock, 30_000);
 /* Scroll-to-top button                                                */
 /* ------------------------------------------------------------------ */
 document.querySelector<HTMLButtonElement>('[data-scroll-top-btn]')?.addEventListener('click', () => animateScroll(0));
-
-/* ------------------------------------------------------------------ */
-/* Contact form (no backend in this clone)                             */
-/* ------------------------------------------------------------------ */
-document.querySelector<HTMLFormElement>('[data-contact-form]')?.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const form = e.currentTarget as HTMLFormElement;
-  if (form.reportValidity()) form.reset();
-});
-
-/* ------------------------------------------------------------------ */
-/* Particles                                                           */
-/* ------------------------------------------------------------------ */
-document.querySelectorAll<HTMLCanvasElement>('[data-particle-canvas]').forEach((canvas) => initParticleCanvas(canvas));
