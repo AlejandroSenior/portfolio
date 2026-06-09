@@ -35,22 +35,52 @@ const switchLangHref = translatePath('/', otherLang) + Astro.url.hash;
       </ul>
     </nav>
 
-    <!-- Mobile hamburger -->
-    <button
-      type="button"
-      data-hamburger
-      aria-haspopup="dialog"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-accent-foreground h-10 md:hidden aspect-square p-0.5"
-    >
-      <span class="sr-only">{t('nav.menu')}</span>
-      <svg class="pointer-events-none h-6 w-6 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-        <rect y="2" x="7" width="9" height="2" rx="1"></rect>
-        <rect y="7" width="16" height="2" rx="1"></rect>
-        <rect y="12" width="9" height="2" rx="1"></rect>
-      </svg>
-    </button>
+    <!-- Mobile hamburger + lang switch -->
+    <div class="flex items-center w-full justify-between md:hidden">
+      <button
+        type="button"
+        data-hamburger
+        aria-haspopup="dialog"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-accent-foreground h-10 aspect-square p-0.5"
+      >
+        <span class="sr-only">{t('nav.menu')}</span>
+        <svg class="pointer-events-none h-6 w-6 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <rect y="2" x="7" width="9" height="2" rx="1"></rect>
+          <rect y="7" width="16" height="2" rx="1"></rect>
+          <rect y="12" width="9" height="2" rx="1"></rect>
+        </svg>
+      </button>
+
+      <a
+        href={switchLangHref}
+        hreflang={otherLang}
+        lang={otherLang}
+        aria-label={`${t('nav.language')}: ${languages[otherLang]}`}
+        class="inline-flex items-center justify-center gap-x-1.5 h-10 px-2 rounded-md text-base font-semibold tracking-wide ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-foreground/80"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m5 8 6 6"></path>
+          <path d="m4 14 6-6 2-3"></path>
+          <path d="M2 5h12"></path>
+          <path d="M7 2h1"></path>
+          <path d="m22 22-5-10-5 10"></path>
+          <path d="M14 18h6"></path>
+        </svg>
+        <span>{otherLang.toUpperCase()}</span>
+      </a>
+    </div>
 
     <!-- Language selector -->
     <a
@@ -111,36 +141,6 @@ const switchLangHref = translatePath('/', otherLang) + Astro.url.hash;
             </li>
           ))
         }
-        <li>
-          <a
-            href={switchLangHref}
-            hreflang={otherLang}
-            lang={otherLang}
-            aria-label={`${t('nav.language')}: ${languages[otherLang]}`}
-            class="group font-medium inline-flex items-center justify-center gap-x-4 text-2xl"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="size-[1em]"
-            >
-              <path d="m5 8 6 6"></path>
-              <path d="m4 14 6-6 2-3"></path>
-              <path d="M2 5h12"></path>
-              <path d="M7 2h1"></path>
-              <path d="m22 22-5-10-5 10"></path>
-              <path d="M14 18h6"></path>
-            </svg>
-            <span>{languages[otherLang]}</span>
-          </a>
-        </li>
       </ul>
     </nav>
   </div>
