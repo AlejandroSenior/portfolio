@@ -87,7 +87,11 @@ const t = useTranslations(lang);
                   playsinline
                   class="max-h-full max-w-full m-auto rounded-sm shadow-xl"
                   data-play-on-view
-                />
+                >
+                  {project.media.videos.map((v) => (
+                    <source src={v.src} type={v.type} />
+                  ))}
+                </video>
               </div>
             </div>
           </article>

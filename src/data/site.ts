@@ -78,8 +78,11 @@ export const projects: Project[] = [
       cover: '/_astro/imcarrows-cover.webp',
       sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
       alt: 'projects.imcarrows.imageAlt',
-      poster: '/_astro/imcarrows-website.gif',
-      videos: [{ src: '/_astro/imcarrows-website.gif', type: 'video/gif' }]
+      poster: '/_astro/imcarrows-cover.webp',
+      videos: [
+        { src: '/_astro/imcarrows-website.webm', type: 'video/webm' },
+        { src: '/_astro/imcarrows-website.mp4', type: 'video/mp4' }
+      ]
     }
   },
   {
@@ -99,8 +102,11 @@ export const projects: Project[] = [
       cover: '/_astro/imcarrows-cover.webp',
       sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
       alt: 'projects.imcarrows.imageAlt',
-      poster: '/_astro/imcarrows-website.gif',
-      videos: [{ src: '/_astro/imcarrows-website.gif', type: 'video/gif' }]
+      poster: '/_astro/imcarrows-cover.webp',
+      videos: [
+        { src: '/_astro/imcarrows-website.webm', type: 'video/webm' },
+        { src: '/_astro/imcarrows-website.mp4', type: 'video/mp4' }
+      ]
     }
   },
   {
@@ -120,8 +126,11 @@ export const projects: Project[] = [
       cover: '/_astro/imcarrows-cover.webp',
       sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
       alt: 'projects.imcarrows.imageAlt',
-      poster: '/_astro/imcarrows-website.gif',
-      videos: [{ src: '/_astro/imcarrows-website.gif', type: 'video/gif' }]
+      poster: '/_astro/imcarrows-cover.webp',
+      videos: [
+        { src: '/_astro/imcarrows-website.webm', type: 'video/webm' },
+        { src: '/_astro/imcarrows-website.mp4', type: 'video/mp4' }
+      ]
     }
   },
 ];
