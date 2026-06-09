@@ -92,8 +92,7 @@ export const ui = {
     'about.location.behind': 'behind you',
 
     'contact.heading': 'Shoot me a message',
-    'contact.intro':
-      'Whether you have a question, a project in mind or just want to say hi — <strong>I would love to hear from you.</strong> Connect with me on LinkedIn or drop me an email.',
+    'contact.intro': "If you're working on something interesting, or have a project in mind, <strong>I'd love to hear from you</strong>",
     'contact.linkedin': 'Connect on LinkedIn',
 
     'footer.builtWith': 'Built with',
@@ -184,7 +183,7 @@ export const ui = {
 
     'contact.heading': 'Envíame un mensaje',
     'contact.intro':
-      'Si tienes alguna pregunta, un proyecto en mente o simplemente quieres saludar — <strong>me encantaría saber de ti.</strong> Conecta conmigo en LinkedIn o escríbeme un correo.',
+      'Si estás trabajando en algo interesante o tienes un proyecto en mente, <strong>me encantaría saber de ti.</strong>',
     'contact.linkedin': 'Conectar en LinkedIn',
 
     'footer.builtWith': 'Hecho con',
