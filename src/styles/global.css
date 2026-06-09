@@ -195,6 +195,10 @@
     font-feature-settings: "liga" on, "dlig" on;
   }
 
+  strong {
+    color: white;
+  }
+
   /* Decorative dotted pattern overlay (mirrored from /pattern.svg) */
   body::before {
     content: "";

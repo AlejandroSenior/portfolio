@@ -30,7 +30,7 @@ export const ui = {
 
     'hero.greeting': "Hey! I'm Alejandro Senior",
     'hero.role': "I'm a <strong>frontend</strong> developer.",
-    'hero.bio': `Specialized in frontend development with <strong>Vue.js</strong>, yet passionate about learning different technologies and continuously improving products and user experiences. Currently working at <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #ff0000; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> as <strong>Frontend Lead</strong>, a role I started in July 2022.`,
+    'hero.bio': `Specialized in frontend development with <strong>Vue.js</strong>, yet passionate about learning different technologies and continuously improving products and user experiences. Currently working at <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #00f9ad; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> as <strong>Frontend Lead</strong>, a role I started in July 2022.`,
     'hero.tagline': `My last name may say <em>Senior</em> — but there's always more to learn, and honestly, that's the best part.`,
 
     'social.linkedin': 'LinkedIn',
