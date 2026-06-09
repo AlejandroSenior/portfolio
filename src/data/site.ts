@@ -81,5 +81,47 @@ export const projects: Project[] = [
       poster: '/_astro/imcarrows-website.gif',
       videos: [{ src: '/_astro/imcarrows-website.gif', type: 'video/gif' }]
     }
-  }
+  },
+  {
+    name: 'Imcarrows',
+    year: '2025',
+    blurb: 'projects.imcarrows.blurb',
+    links: [
+      { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'projects.imcarrows.linkSource', icon: 'lucide:github' },
+      { href: 'https://www.imcarrows.com', tippy: 'projects.imcarrows.linkDemo', icon: 'lucide:external-link' }
+    ],
+    paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
+    skills: [
+      { label: 'TypeScript', icon: 'skills/typescript' },
+      { label: 'Git', icon: 'skills/git' }
+    ],
+    media: {
+      cover: '/_astro/imcarrows-cover.webp',
+      sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
+      alt: 'projects.imcarrows.imageAlt',
+      poster: '/_astro/imcarrows-website.gif',
+      videos: [{ src: '/_astro/imcarrows-website.gif', type: 'video/gif' }]
+    }
+  },
+  {
+    name: 'Imcarrows',
+    year: '2025',
+    blurb: 'projects.imcarrows.blurb',
+    links: [
+      { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'projects.imcarrows.linkSource', icon: 'lucide:github' },
+      { href: 'https://www.imcarrows.com', tippy: 'projects.imcarrows.linkDemo', icon: 'lucide:external-link' }
+    ],
+    paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
+    skills: [
+      { label: 'TypeScript', icon: 'skills/typescript' },
+      { label: 'Git', icon: 'skills/git' }
+    ],
+    media: {
+      cover: '/_astro/imcarrows-cover.webp',
+      sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
+      alt: 'projects.imcarrows.imageAlt',
+      poster: '/_astro/imcarrows-website.gif',
+      videos: [{ src: '/_astro/imcarrows-website.gif', type: 'video/gif' }]
+    }
+  },
 ];

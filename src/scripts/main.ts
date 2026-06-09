@@ -124,7 +124,7 @@ if (projectCards.length) {
         }
       }
     },
-    { rootMargin: '0px 0px -10% 0px', threshold: 0.2 }
+    { rootMargin: '-40% 0px -45% 0px', threshold: 0.2 }
   );
   projectCards.forEach((el) => io.observe(el));
 }
