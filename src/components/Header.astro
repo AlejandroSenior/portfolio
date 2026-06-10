@@ -21,7 +21,6 @@ const switchLangHref = translatePath('/', otherLang) + Astro.url.hash;
             <li>
               <a
                 onclick={`window.smoothScrollTo('${link.href}', event)`}
-                data-nav-link="header"
                 href={link.href}
                 aria-label={`${t('a11y.linkTo')} "${t(link.label).toLowerCase()}"`}
                 class="group font-medium text-base inline-flex items-center justify-center gap-x-2"
@@ -88,7 +87,6 @@ const switchLangHref = translatePath('/', otherLang) + Astro.url.hash;
       hreflang={otherLang}
       lang={otherLang}
       aria-label={`${t('nav.language')}: ${languages[otherLang]}`}
-      data-tippy-content={languages[otherLang]}
       class="hidden md:flex h-10 items-center justify-end gap-x-2 px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 w-fit text-foreground/80"
     >
       <svg
@@ -130,7 +128,6 @@ const switchLangHref = translatePath('/', otherLang) + Astro.url.hash;
             <li>
               <a
                 onclick={`window.smoothScrollTo('${link.href}', event)`}
-                data-nav-link="menu"
                 href={link.href}
                 aria-label={`${t('a11y.linkTo')} "${t(link.label).toLowerCase()}"`}
                 class="group font-medium inline-flex items-center justify-center gap-x-4 text-2xl"

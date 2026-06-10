@@ -95,7 +95,6 @@ if (entries.length) {
       for (const record of records) {
         if (record.isIntersecting) {
           record.target.classList.add('in');
-          record.target.classList.remove('out');
           io.unobserve(record.target);
         }
       }
@@ -159,7 +158,7 @@ function updateClock() {
       timeZoneName: 'shortOffset'
     }).formatToParts(now);
     const name = parts.find((p) => p.type === 'timeZoneName')?.value ?? 'GMT+1';
-    tzEl.textContent = name.replace('GMT', 'GMT');
+    tzEl.textContent = name;
   }
 
   const dateEl = document.querySelector<HTMLElement>('[data-date]');

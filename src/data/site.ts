@@ -63,7 +63,6 @@ export const experience: ExperienceEntry[] = [
 export const projects: Project[] = [
   {
     name: 'Real Tajo C.F.',
-    year: '2026',
     blurb: 'projects.realtajo.blurb',
     links: [
       { href: 'https://github.com/AlejandroSenior/realtajocf', tippy: 'projects.realtajo.linkSource', icon: 'lucide:github' },
@@ -90,7 +89,6 @@ export const projects: Project[] = [
   },
   {
     name: 'El 1%',
-    year: '2024',
     blurb: 'projects.elunoporciento.blurb',
     links: [
       { href: 'https://github.com/AlejandroSenior/el-uno-por-ciento', tippy: 'projects.elunoporciento.linkSource', icon: 'lucide:github' },
@@ -117,7 +115,6 @@ export const projects: Project[] = [
   },
   {
     name: 'Imcarrows',
-    year: '2025',
     blurb: 'projects.imcarrows.blurb',
     links: [
       { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'projects.imcarrows.linkSource', icon: 'lucide:github' },

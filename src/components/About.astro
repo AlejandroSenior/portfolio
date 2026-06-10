@@ -21,8 +21,8 @@ const loves: Love[] = [
     label: 'about.loves.sport',
     img: '/images/emojis/sport/sport.png',
     sources: [
-      { srcset: '/images/emojis/sport/sport.png', type: 'image/png' },
-      { srcset: '/images/emojis/sport/sport.png', type: 'image/png' },
+      { srcset: '/images/emojis/sport/sport.avif', type: 'image/avif' },
+      { srcset: '/images/emojis/sport/sport.webp', type: 'image/webp' },
       { srcset: '/images/emojis/sport/sport.png', type: 'image/png' }
     ],
     alt: 'about.loves.sportAlt',
@@ -56,7 +56,7 @@ const loves: Love[] = [
 ];
 ---
 
-<section id="about" class="mx-auto max-w-screen-xl px-4 xs:px-6 sm:px-8" data-observed-section="3">
+<section id="about" class="mx-auto max-w-screen-xl px-4 xs:px-6 sm:px-8">
   <SectionHeading title={t('about.heading')} />
 
   <div class="my-6 grid grid-cols-10 justify-center gap-6 sm:mx-4 *:overflow-clip *:rounded-xl *:border *:bg-background">
@@ -106,9 +106,9 @@ const loves: Love[] = [
     <article class="col-span-10 col-start-1 p-6 md:p-8 lg:col-span-4 lg:col-start-7">
       <header class="flex items-center gap-4 text-balance font-header text-2xl font-bold">
         <picture>
+          <source srcset="/images/emojis/hand/hand.avif" type="image/avif" />
           <source srcset="/images/emojis/hand/hand.webp" type="image/webp" />
           <source srcset="/images/emojis/hand/hand.png" type="image/png" />
-          <source srcset="/images/emojis/hand/hand.avif" type="image/avif" />
           <img
             src="/images/emojis/hand/hand.gif"
             width="64"
@@ -132,7 +132,7 @@ const loves: Love[] = [
       <div class="grid grid-cols-3 grid-rows-1 gap-x-8 pt-12 sm:gap-x-2">
         {
           loves.map((love) => (
-            <div data-emoji class={love.wrapper}>
+            <div class={love.wrapper}>
               <picture>
                 {love.sources.map((s) => (
                   <source srcset={s.srcset} type={s.type} />
@@ -182,7 +182,7 @@ const loves: Love[] = [
         </div>
         <div class="h-0.5 w-[80%] justify-self-center bg-muted @lg:h-full @lg:w-0.5"></div>
         <div class="flex flex-col items-center justify-start text-center font-sans @lg:w-fit @lg:justify-self-center">
-          <time class="whitespace-nowrap text-3xl font-semibold tabular-nums" data-my-time>
+          <time class="whitespace-nowrap text-3xl font-semibold tabular-nums">
             <span class="font-black capitalize text-primary" data-clock>--:-- --</span>
             <span class="mt-2 text-lg uppercase text-foreground/80" data-tz>GMT+1</span>
             <span class="mt-1 block text-lg font-semibold text-foreground/60 capitalize" data-date>—</span>

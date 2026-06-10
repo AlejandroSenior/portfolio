@@ -41,7 +41,6 @@ export interface ProjectMedia {
 
 export interface Project {
   name: string;
-  year: string;
   blurb: TranslationKey; // emoji + short tagline
   links: ProjectLink[];
   paragraphs: TranslationKey[]; // HTML

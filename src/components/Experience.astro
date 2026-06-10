@@ -9,20 +9,16 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section id="experience" class="z-0 mx-auto max-w-5xl px-4 xs:px-6 sm:px-8" data-observed-section="1">
+<section id="experience" class="z-0 mx-auto max-w-5xl px-4 xs:px-6 sm:px-8">
   <SectionHeading title={t('experience.heading')} />
 
-  <div
-    class="timeline h-fit flex-col justify-center gap-8 ml-2 flex w-full items-start py-6 sm:ml-4 lg:ml-8"
-    data-timeline-items={experience.length}
-  >
+  <div class="h-fit flex-col justify-center gap-8 ml-2 flex w-full items-start py-6 sm:ml-4 lg:ml-8">
     <ul class="w-full">
       {
         experience.map((entry, i) => (
           <li
             class="timeline-entry grid w-full grid-cols-[20px,1fr] grid-rows-[auto,1fr] items-start justify-start gap-x-2 gap-y-7 sm:gap-x-7 lg:gap-14 ease transition-opacity duration-300"
             class:list={[{ 'mt-14': i > 0 }]}
-            data-timeline-index={i + 1}
           >
             <a href={entry.href} target="_blank">
               <div class="entry-content opacity-0">

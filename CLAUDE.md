@@ -6,22 +6,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm run dev        # Start dev server at localhost:4321
-npm run build      # Build production site to ./dist/
+npm run build      # astro check (type checking) + build production site to ./dist/
 npm run preview    # Preview production build locally
 ```
 
-No test suite is configured. Type checking is provided by Astro's strict TypeScript config.
+No test suite is configured. `npm run build` runs `astro check` first, so it doubles as the type-check command.
 
 ## Architecture
 
-Single-page static portfolio site built with **Astro 6** and **Tailwind CSS 4**. No JS framework (React/Vue/etc.) — all components are `.astro` files with zero client-side JS by default.
+Static portfolio site built with **Astro 6** and **Tailwind CSS 4**. No JS framework — all components are `.astro` files. The only client-side JS is `src/scripts/main.ts` (smooth scroll, mobile menu, IntersectionObserver reveals, live Madrid clock), loaded from the page.
 
-**Page composition:** `src/pages/index.astro` is the sole page, composed from components in `src/components/`. The layout wrapper is `src/layouts/Layout.astro` (handles `<html>`, `<head>`, global styles, `lang="es"`).
+**Routing / i18n:** Two locales, English (default) and Spanish, served at `/en/` and `/es/`.
+- `src/pages/[lang]/index.astro` — the real page, one static route per locale via `getStaticPaths`.
+- `src/pages/index.astro` — meta-refresh redirect from `/` to `/${defaultLang}/`.
+- `src/i18n/ui.ts` — `languages`, `defaultLang`, and the `ui` dictionary with every UI string keyed by `TranslationKey`. Both locales must define the same keys.
+- `src/i18n/utils.ts` — `getLangFromUrl`, `useTranslations` (returns `t()`), `useTranslatedPath`.
+- Many translation values are HTML strings rendered with `set:html` / `<Fragment set:html>`.
 
-**Sections (in order):** Header → Hero → About → Experience → Projects → Contact → Footer. Navigation links are anchor-based (`#sobre-mi`, `#proyectos`, `#experiencia`, `#contacto`).
+**Data:** Content lives in `src/data/site.ts` (nav links, social links, experience entries, projects) typed by `src/interfaces.ts`. Components reference content by translation key; the actual copy lives in `src/i18n/ui.ts`. Icons are inline SVGs in `src/data/icons.ts` (`IconName` union type), rendered by `src/components/Icon.astro`.
 
-**Data:** All content (jobs, projects, skills) is hardcoded as arrays in each component's frontmatter (`---` block). There is no CMS or external data source.
+**Sections (in order):** Header → Hero → Experience → Projects → About → Contact → Footer (+ ScrollWidgets scroll-to-top button). Navigation is anchor-based: `#experience`, `#projects`, `#about`, `#contact`.
 
-**Styling:** Tailwind CSS v4 (imported via `@import "tailwindcss"` in `src/styles/global.css`). Custom design tokens use CSS variables for the dark color scheme (`dark`, `dark-lighter`, `primary`, `secondary`, `gray-custom`). Reusable utility classes `gradient-text` and `card-hover` are defined in components.
+**Layout:** `src/layouts/Layout.astro` handles `<html>`/`<head>` (SEO meta, canonical, hreflang alternates), global styles, and sets `class="dark"` — the site always runs in dark mode via the `.dark` design tokens.
 
-**Contact form:** Static HTML only — no form submission backend is wired up.
+**Path aliases** (tsconfig): `@components/*`, `@layouts/*`, `@data/*`, `@i18n/*`.
+
+**Styling:** Tailwind CSS v4 via `@tailwindcss/vite`; theme defined in `src/styles/global.css` (`@theme inline` block). Design tokens are shadcn-style HSL CSS variables (`--background`, `--primary`, `--accent`, …) defined in `:root`/`.dark`. Custom breakpoints `fold` (17.5rem) and `xs` (30rem) sit below Tailwind's `sm`. Fonts (Satoshi, Onest) are self-hosted from `public/fonts/`. Animations come from the `tailwind-animations` package plus custom keyframes/scroll-driven animations in `global.css`.
+
+**Assets:** Everything is served from `public/` (no `src/assets`); project covers/videos and emoji images live under `public/_astro/` and `public/images/`.
+
+**Contact:** LinkedIn + mailto links only — no form or backend.
