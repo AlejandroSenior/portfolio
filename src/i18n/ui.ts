@@ -66,6 +66,13 @@ export const ui = {
     'projects.realtajo.p2': `Built with Astro and Vue and deployed on Firebase, it's the perfect example of a side project made for the love of the game — and yes, we are the <strong>2025/2026 league champions</strong>. 🏆`,
     'projects.realtajo.imageAlt': 'Preview of the project "Real Tajo C.F."',
 
+    'projects.elunoporciento.blurb': '🧠 Real-time multiplayer logic quiz',
+    'projects.elunoporciento.linkSource': 'Source Code',
+    'projects.elunoporciento.linkDemo': 'Play a round!',
+    'projects.elunoporciento.p1': `Inspired by the TV quiz show, <strong>El 1%</strong> is a real-time multiplayer game of logic puzzles: create a room, share its 4-letter code, and up to <strong>6 players</strong> face <strong>10 elimination rounds</strong> answering simultaneously against the clock. Multiplayer synchronization runs on <strong>PartyKit over WebSockets</strong>, with each room's state living in <strong>Cloudflare Durable Objects</strong>.`,
+    'projects.elunoporciento.p2': `I built it to settle a recurring debate on game nights with friends: who actually belongs to the smartest 1%? The verdict is still out — but the rooms keep filling up. 🧠`,
+    'projects.elunoporciento.imageAlt': 'Preview of the project "El 1%"',
+
     'projects.imcarrows.blurb': '🚗 Importing cars from Germany',
     'projects.imcarrows.linkSource': 'Source Code',
     'projects.imcarrows.linkDemo': 'Try it out!',
@@ -162,6 +169,13 @@ export const ui = {
     'projects.realtajo.p1': `Junto a un amigo, desarrollé la web oficial del <strong>Real Tajo C.F.</strong>, el club de fútbol amateur en el que juego con mis amigos en Aranjuez. La web traslada el día de partido a internet: una sección de <strong>plantilla</strong> con fichas de jugadores, una <strong>galería de fotos</strong> optimizada con Cloudinary y el <strong>último resultado y la clasificación</strong> siempre al día.`,
     'projects.realtajo.p2': `Construida con Astro y Vue y desplegada en Firebase, es el ejemplo perfecto de un proyecto hecho por amor al juego — y sí, somos los <strong>campeones de liga 2025/2026</strong>. 🏆`,
     'projects.realtajo.imageAlt': 'Vista previa del proyecto "Real Tajo C.F."',
+
+    'projects.elunoporciento.blurb': '🧠 Quiz de lógica multijugador en tiempo real',
+    'projects.elunoporciento.linkSource': 'Código fuente',
+    'projects.elunoporciento.linkDemo': '¡Juega una partida!',
+    'projects.elunoporciento.p1': `Inspirado en el concurso de televisión, <strong>El 1%</strong> es un juego multijugador de preguntas de lógica en tiempo real: creas una sala, compartes su código de 4 letras y hasta <strong>6 jugadores</strong> se enfrentan a <strong>10 rondas eliminatorias</strong> respondiendo a la vez contrarreloj. La sincronización corre sobre <strong>PartyKit con WebSockets</strong>, y el estado de cada sala vive en <strong>Cloudflare Durable Objects</strong>.`,
+    'projects.elunoporciento.p2': `Lo construí para zanjar un debate recurrente en las noches de juegos con amigos: ¿quién pertenece de verdad al 1% más listo? El veredicto sigue pendiente — pero las salas se siguen llenando. 🧠`,
+    'projects.elunoporciento.imageAlt': 'Vista previa del proyecto "El 1%"',
 
     'projects.imcarrows.blurb': '🚗 Importación de coches desde Alemania',
     'projects.imcarrows.linkSource': 'Código fuente',

@@ -89,28 +89,29 @@ export const projects: Project[] = [
     }
   },
   {
-    name: 'Imcarrows',
-    year: '2025',
-    blurb: 'projects.imcarrows.blurb',
+    name: 'El 1%',
+    year: '2024',
+    blurb: 'projects.elunoporciento.blurb',
     links: [
-      { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'projects.imcarrows.linkSource', icon: 'lucide:github' },
-      { href: 'https://www.imcarrows.com', tippy: 'projects.imcarrows.linkDemo', icon: 'lucide:external-link' }
+      { href: 'https://github.com/AlejandroSenior/el-uno-por-ciento', tippy: 'projects.elunoporciento.linkSource', icon: 'lucide:github' },
+      { href: 'https://el-uno-por-ciento.pages.dev', tippy: 'projects.elunoporciento.linkDemo', icon: 'lucide:external-link' }
     ],
-    paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
+    paragraphs: ['projects.elunoporciento.p1', 'projects.elunoporciento.p2'],
     skills: [
       { label: 'Astro', icon: 'skills/astro' },
+      { label: 'Vue', icon: 'skills/vue' },
       { label: 'TypeScript', icon: 'skills/typescript' },
       { label: 'Tailwind', icon: 'skills/tailwind' },
       { label: 'Cloudflare', icon: 'skills/cloudflare' }
     ],
     media: {
-      cover: '/_astro/imcarrows-cover.webp',
-      sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
-      alt: 'projects.imcarrows.imageAlt',
-      poster: '/_astro/imcarrows-cover.webp',
+      cover: '/_astro/elunoporciento-cover.webp',
+      sources: [{ srcset: '/_astro/elunoporciento-cover.webp', type: 'image/webp' }],
+      alt: 'projects.elunoporciento.imageAlt',
+      poster: '/_astro/elunoporciento-cover.webp',
       videos: [
-        { src: '/_astro/imcarrows-website.webm', type: 'video/webm' },
-        { src: '/_astro/imcarrows-website.mp4', type: 'video/mp4' }
+        { src: '/_astro/elunoporciento-website.webm', type: 'video/webm' },
+        { src: '/_astro/elunoporciento-website.mp4', type: 'video/mp4' }
       ]
     }
   },
@@ -124,8 +125,10 @@ export const projects: Project[] = [
     ],
     paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
     skills: [
+      { label: 'Astro', icon: 'skills/astro' },
       { label: 'TypeScript', icon: 'skills/typescript' },
-      { label: 'Git', icon: 'skills/git' }
+      { label: 'Tailwind', icon: 'skills/tailwind' },
+      { label: 'Cloudflare', icon: 'skills/cloudflare' }
     ],
     media: {
       cover: '/_astro/imcarrows-cover.webp',
