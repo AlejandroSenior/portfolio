@@ -59,6 +59,13 @@ export const ui = {
     'experience.animasoluciones.p4': `Working across multiple projects and technologies helped me strengthen both my <strong>technical skills</strong> and my ability to <strong>deliver value in dynamic environments</strong>.`,
 
     'projects.heading': 'Some of my favorite projects',
+    'projects.realtajo.blurb': "⚽ My football team's official website",
+    'projects.realtajo.linkSource': 'Source Code',
+    'projects.realtajo.linkDemo': 'Visit the club!',
+    'projects.realtajo.p1': `Together with a friend, I built the official website for <strong>Real Tajo C.F.</strong>, the amateur football club I play for with my friends in Aranjuez. The site brings matchday online: a <strong>squad section</strong> with player cards, a <strong>photo gallery</strong> optimized through Cloudinary, and the <strong>latest result and league standings</strong> always up to date.`,
+    'projects.realtajo.p2': `Built with Astro and Vue and deployed on Firebase, it's the perfect example of a side project made for the love of the game — and yes, we are the <strong>2025/2026 league champions</strong>. 🏆`,
+    'projects.realtajo.imageAlt': 'Preview of the project "Real Tajo C.F."',
+
     'projects.imcarrows.blurb': '🚗 Importing cars from Germany',
     'projects.imcarrows.linkSource': 'Source Code',
     'projects.imcarrows.linkDemo': 'Try it out!',
@@ -149,6 +156,13 @@ export const ui = {
     'experience.animasoluciones.p4': `Trabajar en múltiples proyectos y tecnologías me ayudó a reforzar tanto mis <strong>habilidades técnicas</strong> como mi capacidad para <strong>aportar valor en entornos cambiantes</strong>.`,
 
     'projects.heading': 'Algunos de mis proyectos favoritos',
+    'projects.realtajo.blurb': '⚽ La web oficial de mi equipo de fútbol',
+    'projects.realtajo.linkSource': 'Código fuente',
+    'projects.realtajo.linkDemo': '¡Visita el club!',
+    'projects.realtajo.p1': `Junto a un amigo, desarrollé la web oficial del <strong>Real Tajo C.F.</strong>, el club de fútbol amateur en el que juego con mis amigos en Aranjuez. La web traslada el día de partido a internet: una sección de <strong>plantilla</strong> con fichas de jugadores, una <strong>galería de fotos</strong> optimizada con Cloudinary y el <strong>último resultado y la clasificación</strong> siempre al día.`,
+    'projects.realtajo.p2': `Construida con Astro y Vue y desplegada en Firebase, es el ejemplo perfecto de un proyecto hecho por amor al juego — y sí, somos los <strong>campeones de liga 2025/2026</strong>. 🏆`,
+    'projects.realtajo.imageAlt': 'Vista previa del proyecto "Real Tajo C.F."',
+
     'projects.imcarrows.blurb': '🚗 Importación de coches desde Alemania',
     'projects.imcarrows.linkSource': 'Código fuente',
     'projects.imcarrows.linkDemo': '¡Pruébalo!',

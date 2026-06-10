@@ -120,7 +120,10 @@ if (projectCards.length) {
           video?.play().catch(() => {});
         } else {
           card.classList.remove('intersecting');
-          video?.pause();
+          if (video) {
+            video.currentTime = 0;
+            video.play();
+          }
         }
       }
     },

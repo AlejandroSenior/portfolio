@@ -62,6 +62,33 @@ export const experience: ExperienceEntry[] = [
 
 export const projects: Project[] = [
   {
+    name: 'Real Tajo C.F.',
+    year: '2026',
+    blurb: 'projects.realtajo.blurb',
+    links: [
+      { href: 'https://github.com/AlejandroSenior/realtajocf', tippy: 'projects.realtajo.linkSource', icon: 'lucide:github' },
+      { href: 'https://real-tajo-cf.web.app', tippy: 'projects.realtajo.linkDemo', icon: 'lucide:external-link' }
+    ],
+    paragraphs: ['projects.realtajo.p1', 'projects.realtajo.p2'],
+    skills: [
+      { label: 'Astro', icon: 'skills/astro' },
+      { label: 'Vue', icon: 'skills/vue' },
+      { label: 'TypeScript', icon: 'skills/typescript' },
+      { label: 'Tailwind', icon: 'skills/tailwind' },
+      { label: 'Firebase', icon: 'skills/firebase' }
+    ],
+    media: {
+      cover: '/_astro/realtajo-cover.webp',
+      sources: [{ srcset: '/_astro/realtajo-cover.webp', type: 'image/webp' }],
+      alt: 'projects.realtajo.imageAlt',
+      poster: '/_astro/realtajo-cover.webp',
+      videos: [
+        { src: '/_astro/realtajo-website.webm', type: 'video/webm' },
+        { src: '/_astro/realtajo-website.mp4', type: 'video/mp4' }
+      ]
+    }
+  },
+  {
     name: 'Imcarrows',
     year: '2025',
     blurb: 'projects.imcarrows.blurb',
@@ -71,8 +98,10 @@ export const projects: Project[] = [
     ],
     paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
     skills: [
+      { label: 'Astro', icon: 'skills/astro' },
       { label: 'TypeScript', icon: 'skills/typescript' },
-      { label: 'Git', icon: 'skills/git' }
+      { label: 'Tailwind', icon: 'skills/tailwind' },
+      { label: 'Cloudflare', icon: 'skills/cloudflare' }
     ],
     media: {
       cover: '/_astro/imcarrows-cover.webp',
@@ -108,29 +137,5 @@ export const projects: Project[] = [
         { src: '/_astro/imcarrows-website.mp4', type: 'video/mp4' }
       ]
     }
-  },
-  {
-    name: 'Imcarrows',
-    year: '2025',
-    blurb: 'projects.imcarrows.blurb',
-    links: [
-      { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'projects.imcarrows.linkSource', icon: 'lucide:github' },
-      { href: 'https://www.imcarrows.com', tippy: 'projects.imcarrows.linkDemo', icon: 'lucide:external-link' }
-    ],
-    paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
-    skills: [
-      { label: 'TypeScript', icon: 'skills/typescript' },
-      { label: 'Git', icon: 'skills/git' }
-    ],
-    media: {
-      cover: '/_astro/imcarrows-cover.webp',
-      sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
-      alt: 'projects.imcarrows.imageAlt',
-      poster: '/_astro/imcarrows-cover.webp',
-      videos: [
-        { src: '/_astro/imcarrows-website.webm', type: 'video/webm' },
-        { src: '/_astro/imcarrows-website.mp4', type: 'video/mp4' }
-      ]
-    }
-  },
+  }
 ];
