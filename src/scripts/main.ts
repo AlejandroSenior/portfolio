@@ -126,7 +126,9 @@ if (projectCards.length) {
         }
       }
     },
-    { rootMargin: '-40% 0px -45% 0px', threshold: 0.2 }
+    // threshold must be 0: the rootMargin shrinks the root to a 15%-tall band,
+    // so tall mobile cards can never cover 20% of themselves inside it
+    { rootMargin: '-40% 0px -45% 0px', threshold: 0 }
   );
   projectCards.forEach((el) => io.observe(el));
 }
