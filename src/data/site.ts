@@ -62,6 +62,31 @@ export const experience: ExperienceEntry[] = [
 
 export const projects: Project[] = [
   {
+    name: 'Imcarrows',
+    blurb: 'projects.imcarrows.blurb',
+    links: [
+      { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'projects.imcarrows.linkSource', icon: 'lucide:github' },
+      { href: 'https://www.imcarrows.com', tippy: 'projects.imcarrows.linkDemo', icon: 'lucide:external-link' }
+    ],
+    paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
+    skills: [
+      { label: 'Astro', icon: 'skills/astro' },
+      { label: 'TypeScript', icon: 'skills/typescript' },
+      { label: 'Tailwind', icon: 'skills/tailwind' },
+      { label: 'Cloudflare', icon: 'skills/cloudflare' }
+    ],
+    media: {
+      cover: '/_astro/imcarrows-cover.webp',
+      sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
+      alt: 'projects.imcarrows.imageAlt',
+      poster: '/_astro/imcarrows-cover.webp',
+      videos: [
+        { src: '/_astro/imcarrows-website.webm', type: 'video/webm' },
+        { src: '/_astro/imcarrows-website.mp4', type: 'video/mp4' }
+      ]
+    }
+  },
+  {
     name: 'Real Tajo C.F.',
     blurb: 'projects.realtajo.blurb',
     links: [
@@ -110,31 +135,6 @@ export const projects: Project[] = [
       videos: [
         { src: '/_astro/elunoporciento-website.webm', type: 'video/webm' },
         { src: '/_astro/elunoporciento-website.mp4', type: 'video/mp4' }
-      ]
-    }
-  },
-  {
-    name: 'Imcarrows',
-    blurb: 'projects.imcarrows.blurb',
-    links: [
-      { href: 'https://github.com/AlejandroSenior/Imcarrows', tippy: 'projects.imcarrows.linkSource', icon: 'lucide:github' },
-      { href: 'https://www.imcarrows.com', tippy: 'projects.imcarrows.linkDemo', icon: 'lucide:external-link' }
-    ],
-    paragraphs: ['projects.imcarrows.p1', 'projects.imcarrows.p2'],
-    skills: [
-      { label: 'Astro', icon: 'skills/astro' },
-      { label: 'TypeScript', icon: 'skills/typescript' },
-      { label: 'Tailwind', icon: 'skills/tailwind' },
-      { label: 'Cloudflare', icon: 'skills/cloudflare' }
-    ],
-    media: {
-      cover: '/_astro/imcarrows-cover.webp',
-      sources: [{ srcset: '/_astro/imcarrows-cover.webp', type: 'image/webp' }],
-      alt: 'projects.imcarrows.imageAlt',
-      poster: '/_astro/imcarrows-cover.webp',
-      videos: [
-        { src: '/_astro/imcarrows-website.webm', type: 'video/webm' },
-        { src: '/_astro/imcarrows-website.mp4', type: 'video/mp4' }
       ]
     }
   }

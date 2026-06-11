@@ -30,7 +30,7 @@ export const ui = {
 
     'hero.greeting': "Hey! I'm Alejandro Senior",
     'hero.role': "I'm a <strong>frontend</strong> developer.",
-    'hero.bio': `Specialized in frontend development with <strong>Vue.js</strong>, yet passionate about learning different technologies and continuously improving products and user experiences. Currently working at <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #00f9ad; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> as <strong>Frontend Lead</strong>, a role I started in July 2022.`,
+    'hero.bio': `Specialized in frontend development with <strong>Vue.js</strong> and <strong>Angular</strong>, yet passionate about learning different technologies and continuously improving products and user experiences. Currently working at <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #00f9ad; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> as <strong>Frontend Lead</strong>, a role I started in July 2022.`,
     'hero.tagline': `My last name may say <em>Senior</em> — but there's always more to learn, and honestly, that's the best part.`,
 
     'social.linkedin': 'LinkedIn',
@@ -134,7 +134,7 @@ export const ui = {
 
     'hero.greeting': '¡Hola! Soy Alejandro Senior',
     'hero.role': 'Desarrollador <strong>frontend</strong>.',
-    'hero.bio': `Especializado en desarrollo frontend con <strong>Vue.js</strong>, aunque me apasiona aprender tecnologías nuevas y mejorar continuamente los productos y la experiencia de usuario. Actualmente trabajo en <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #ff0000; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> como <strong>Frontend Lead</strong>, un puesto que ocupo desde julio de 2022.`,
+    'hero.bio': `Especializado en desarrollo frontend con <strong>Vue.js</strong> y <strong>Angular</strong>, aunque me apasiona aprender tecnologías nuevas y mejorar continuamente los productos y la experiencia de usuario. Actualmente trabajo en <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #00f9ad; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> como <strong>Frontend Lead</strong>, un puesto que ocupo desde julio de 2022.`,
     'hero.tagline': `Puede que mi apellido diga <em>Senior</em>, pero siempre queda algo nuevo por aprender — y, sinceramente, esa es la mejor parte.`,
 
     'social.linkedin': 'LinkedIn',
