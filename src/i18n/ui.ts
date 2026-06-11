@@ -43,7 +43,7 @@ export const ui = {
     'experience.microwd.title': 'Frontend Developer · Microwd',
     'experience.microwd.location': 'Madrid, Spain',
     'experience.microwd.start': 'July 2022',
-    'experience.microwd.end': 'May 2024',
+    'experience.microwd.end': 'now',
     'experience.microwd.p1': `<q>Technology becomes meaningful when it helps create opportunities for others.</q>`,
     'experience.microwd.p2': `As part of a <strong>fintech platform</strong> focused on micro-investment opportunities, I have been responsible for building and maintaining <strong>user-facing applications</strong> that connect investors with projects in <strong>emerging markets</strong>.`,
     'experience.microwd.p3': `My work includes developing new features, improving user experience, integrating external services, and ensuring the platform remains <strong>scalable and maintainable</strong> as the product grows. I collaborate closely with product and backend teams, contributing not only to implementation but also to <strong>technical decision-making</strong> and product evolution.`,
@@ -147,7 +147,7 @@ export const ui = {
     'experience.microwd.title': 'Desarrollador Frontend · Microwd',
     'experience.microwd.location': 'Madrid, España',
     'experience.microwd.start': 'julio de 2022',
-    'experience.microwd.end': 'mayo de 2024',
+    'experience.microwd.end': 'actualidad',
     'experience.microwd.p1': `<q>La tecnología cobra sentido cuando ayuda a crear oportunidades para otras personas.</q>`,
     'experience.microwd.p2': `Como parte de una <strong>plataforma fintech</strong> centrada en oportunidades de microinversión, me he encargado de construir y mantener <strong>aplicaciones para usuarios finales</strong> que conectan a inversores con proyectos en <strong>mercados emergentes</strong>.`,
     'experience.microwd.p3': `Mi trabajo incluye el desarrollo de nuevas funcionalidades, la mejora de la experiencia de usuario, la integración de servicios externos y velar por que la plataforma siga siendo <strong>escalable y mantenible</strong> a medida que el producto crece. Colaboro estrechamente con los equipos de producto y backend, aportando no solo en la implementación, sino también en la <strong>toma de decisiones técnicas</strong> y en la evolución del producto.`,
@@ -210,8 +210,7 @@ export const ui = {
     'about.location.behind': 'por detrás de ti',
 
     'contact.heading': 'Envíame un mensaje',
-    'contact.intro':
-      'Si estás trabajando en algo interesante o tienes un proyecto en mente, <strong>me encantaría saber de ti.</strong>',
+    'contact.intro': 'Si estás trabajando en algo interesante o tienes un proyecto en mente, <strong>me encantaría saber de ti.</strong>',
     'contact.linkedin': 'Conectar en LinkedIn',
 
     'footer.builtWith': 'Hecho con',
