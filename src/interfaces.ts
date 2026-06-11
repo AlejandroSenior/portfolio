@@ -11,6 +11,7 @@ export interface SocialLink {
   label: TranslationKey;
   href: string;
   icon: IconName;
+  name?: string;
 }
 export interface Skill {
   label: string;

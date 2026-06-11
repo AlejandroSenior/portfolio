@@ -43,17 +43,26 @@ const t = useTranslations(lang);
         <ul class="flex gap-x-2">
           {
             heroSocials.map((social) => (
-              <li class="rounded-lg text-foreground/80 transition duration-200 hover:bg-accent hover:text-accent-foreground/80">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={social.href}
-                  aria-label={`${t('a11y.linkTo')} "${t(social.label)}" ${t('a11y.opensInNewTab')}`}
-                  class="group"
+              <span class="group/badge relative inline-flex">
+                <li class="rounded-lg text-foreground/80 transition duration-200 hover:bg-accent hover:text-accent-foreground/80">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={social.href}
+                    aria-label={`${t('a11y.linkTo')} "${t(social.label)}" ${t('a11y.opensInNewTab')}`}
+                    class="group"
+                  >
+                    <Icon name={social.icon} class="box-content size-6 p-2 text-current sm:size-7 md:size-8" />
+                  </a>
+                </li>
+                <span
+                  aria-hidden="true"
+                  class="pointer-events-none absolute top-full left-1/2 z-10 mt-2 -translate-x-1/2 -translate-y-1 scale-95 whitespace-nowrap rounded-sm bg-neutral-600 px-2.5 py-1 text-sm font-semibold text-white opacity-0 shadow-md transition duration-200 group-hover/badge:translate-y-0 group-hover/badge:scale-100 group-hover/badge:opacity-100 group-hover/badge:delay-100"
                 >
-                  <Icon name={social.icon} class="box-content size-6 p-2 text-current sm:size-7 md:size-8" />
-                </a>
-              </li>
+                  {social.name}
+                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-neutral-600" />
+                </span>
+              </span>
             ))
           }
         </ul>

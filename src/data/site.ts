@@ -10,10 +10,10 @@ export const navLinks: NavLink[] = [
 ];
 
 export const heroSocials: SocialLink[] = [
-  { label: 'social.linkedin', href: 'https://linkedin.com/in/alejandrosenior', icon: 'lucide:linkedin' },
-  { label: 'social.github', href: 'https://github.com/AlejandroSenior', icon: 'lucide:github' },
-  { label: 'social.email', href: `mailto:${EMAIL}`, icon: 'lucide:mail' },
-  { label: 'social.resume', href: '/CV-Alejandro-Senior.pdf', icon: 'lucide:scroll' }
+  { name: 'LinkedIn', label: 'social.linkedin', href: 'https://linkedin.com/in/alejandrosenior', icon: 'lucide:linkedin' },
+  { name: 'GitHub', label: 'social.github', href: 'https://github.com/AlejandroSenior', icon: 'lucide:github' },
+  { name: 'Email', label: 'social.email', href: `mailto:${EMAIL}`, icon: 'lucide:mail' },
+  { name: 'CV', label: 'social.resume', href: '/CV-Alejandro-Senior.pdf', icon: 'lucide:scroll' }
 ];
 
 export const contactSocials: SocialLink[] = [
