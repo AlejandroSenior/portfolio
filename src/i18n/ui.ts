@@ -31,7 +31,7 @@ export const ui = {
     'hero.greeting': "Hey! I'm Alejandro Senior",
     'hero.role': "I'm a <strong>frontend</strong> developer.",
     'hero.bio': `Specialized in frontend development with <strong>Vue.js</strong> and <strong>Angular</strong>, yet passionate about learning different technologies and continuously improving products and user experiences. Currently working at <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #00f9ad; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> as <strong>Frontend Lead</strong>, a role I started in July 2022.`,
-    'hero.tagline': `My last name may say <em>Senior</em> — but there's always more to learn, and honestly, that's the best part.`,
+    'hero.tagline': `My last name may say <em>Senior</em>, but there's always more to learn, and honestly, that's the best part.`,
 
     'social.linkedin': 'LinkedIn',
     'social.github': 'GitHub',
@@ -63,20 +63,20 @@ export const ui = {
     'projects.realtajo.linkSource': 'Source Code',
     'projects.realtajo.linkDemo': 'Visit the club!',
     'projects.realtajo.p1': `Together with a friend, I built the official website for <strong>Real Tajo C.F.</strong>, the amateur football club I play for with my friends in Aranjuez. The site brings matchday online: a <strong>squad section</strong> with player cards, a <strong>photo gallery</strong> optimized through Cloudinary, and the <strong>latest result and league standings</strong> always up to date.`,
-    'projects.realtajo.p2': `Built with Astro and Vue and deployed on Firebase, it's the perfect example of a side project made for the love of the game — and yes, we are the <strong>2025/2026 league champions</strong>. 🏆`,
+    'projects.realtajo.p2': `Built with Astro and Vue and deployed on Firebase, it's the perfect example of a side project made for the love of the game, and yes, we are the <strong>2025/2026 league champions</strong>. 🏆`,
     'projects.realtajo.imageAlt': 'Preview of the project "Real Tajo C.F."',
 
     'projects.elunoporciento.blurb': '🧠 Real-time multiplayer logic quiz',
     'projects.elunoporciento.linkSource': 'Source Code',
     'projects.elunoporciento.linkDemo': 'Play a round!',
     'projects.elunoporciento.p1': `Inspired by the TV quiz show, <strong>El 1%</strong> is a real-time multiplayer game of logic puzzles: create a room, share its 4-letter code, and up to <strong>6 players</strong> face <strong>10 elimination rounds</strong> answering simultaneously against the clock. Multiplayer synchronization runs on <strong>PartyKit over WebSockets</strong>, with each room's state living in <strong>Cloudflare Durable Objects</strong>.`,
-    'projects.elunoporciento.p2': `I built it to settle a recurring debate on game nights with friends: who actually belongs to the smartest 1%? The verdict is still out — but the rooms keep filling up. 🧠`,
+    'projects.elunoporciento.p2': `I built it to settle a recurring debate on game nights with friends: who actually belongs to the smartest 1%? The verdict is still out, but the rooms keep filling up. 🧠`,
     'projects.elunoporciento.imageAlt': 'Preview of the project "El 1%"',
 
     'projects.imcarrows.blurb': '🚗 Importing cars from Germany',
     'projects.imcarrows.linkSource': 'Source Code',
     'projects.imcarrows.linkDemo': 'Try it out!',
-    'projects.imcarrows.p1': `I independently developed <strong>Imcarrows</strong>, a website focused on attracting customers interested in importing vehicles from Germany to Spain. The goal of the project was to clearly explain the <strong>end-to-end service</strong>—including vehicle sourcing, technical inspections, transportation, and registration—and to facilitate <strong>lead generation</strong> through conversion-optimized contact forms.`,
+    'projects.imcarrows.p1': `I independently developed <strong>Imcarrows</strong>, a website focused on attracting customers interested in importing vehicles from Germany to Spain. The goal of the project was to clearly explain the <strong>end-to-end service</strong> (vehicle sourcing, technical inspections, transportation, and registration) and to facilitate <strong>lead generation</strong> through conversion-optimized contact forms.`,
     'projects.imcarrows.p2': `The company belongs to a close friend of mine, and I was glad to help by building what became their primary business tool.`,
     'projects.imcarrows.imageAlt': 'Preview of the project "Imcarrows"',
 
@@ -84,7 +84,7 @@ export const ui = {
     'about.work.heading': 'At Work',
     'about.work.emojiAlt': 'Laptop Emoji',
     'about.work.p1': `With over 6 years of experience in frontend development, I work with a strong <strong>attention to detail</strong> and a genuine focus on <strong>product quality</strong>. I've grown from developer to leading the frontend team, becoming the <strong>technical reference</strong> for all UI-related decisions.`,
-    'about.work.p2': `Building <strong>well-structured, maintainable interfaces</strong> that are also enjoyable to use is what drives me — and I'm always looking for ways to improve the codebase, the workflow, or the <strong>user experience</strong>.`,
+    'about.work.p2': `Building <strong>well-structured, maintainable interfaces</strong> that are also enjoyable to use is what drives me, and I'm always looking for ways to improve the codebase, the workflow, or the <strong>user experience</strong>.`,
     'about.work.approachAlt': 'My approach with code',
 
     'about.personal.heading': 'My personal side',

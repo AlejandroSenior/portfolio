@@ -1,6 +1,23 @@
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 /* ------------------------------------------------------------------ */
+/* Keep scroll position when switching language                        */
+/* ------------------------------------------------------------------ */
+const LANG_SWITCH_SCROLL_KEY = 'langSwitchScrollY';
+
+const savedScrollY = sessionStorage.getItem(LANG_SWITCH_SCROLL_KEY);
+if (savedScrollY !== null) {
+  sessionStorage.removeItem(LANG_SWITCH_SCROLL_KEY);
+  window.scrollTo(0, Number(savedScrollY));
+}
+
+document.querySelectorAll<HTMLAnchorElement>('[data-lang-switch]').forEach((link) => {
+  link.addEventListener('click', () => {
+    sessionStorage.setItem(LANG_SWITCH_SCROLL_KEY, String(window.scrollY));
+  });
+});
+
+/* ------------------------------------------------------------------ */
 /* Smooth scroll — rAF-based to bypass browser/CSS overflow quirks     */
 /* ------------------------------------------------------------------ */
 const HEADER_OFFSET = -64;
@@ -149,7 +166,7 @@ function updateClock() {
       timeZone: tz,
       hour: 'numeric',
       minute: '2-digit',
-      hour12: true
+      hour12: lang === 'en'
     }).format(now);
   }
 
