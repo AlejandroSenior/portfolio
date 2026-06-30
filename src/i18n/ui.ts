@@ -135,7 +135,7 @@ export const ui = {
     'hero.greeting': '¡Hola! Soy Alejandro Senior',
     'hero.role': 'Desarrollador <strong>frontend</strong>.',
     'hero.bio': `Especializado en desarrollo frontend con <strong>Vue.js</strong> y <strong>Angular</strong>, aunque me apasiona aprender tecnologías nuevas y mejorar continuamente los productos y la experiencia de usuario. Actualmente trabajo en <a href="https://www.microwd.es" target="_blank"><strong><span style="color: #00f9ad; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px">Microwd</span></strong></a> como <strong>Frontend Lead</strong>, un puesto que ocupo desde julio de 2022.`,
-    'hero.tagline': `Puede que mi apellido diga <em>Senior</em>, pero siempre queda algo nuevo por aprender — y, sinceramente, esa es la mejor parte.`,
+    'hero.tagline': `Puede que mi apellido diga <em>Senior</em>, pero siempre queda algo nuevo por aprender y, sinceramente, esa es la mejor parte.`,
 
     'social.linkedin': 'LinkedIn',
     'social.github': 'GitHub',
@@ -167,14 +167,14 @@ export const ui = {
     'projects.realtajo.linkSource': 'Código fuente',
     'projects.realtajo.linkDemo': '¡Visita el club!',
     'projects.realtajo.p1': `Junto a un amigo, desarrollé la web oficial del <strong>Real Tajo C.F.</strong>, el club de fútbol amateur en el que juego con mis amigos en Aranjuez. La web traslada el día de partido a internet: una sección de <strong>plantilla</strong> con fichas de jugadores, una <strong>galería de fotos</strong> optimizada con Cloudinary y el <strong>último resultado y la clasificación</strong> siempre al día.`,
-    'projects.realtajo.p2': `Construida con Astro y Vue y desplegada en Firebase, es el ejemplo perfecto de un proyecto hecho por amor al juego — y sí, somos los <strong>campeones de liga 2025/2026</strong>. 🏆`,
+    'projects.realtajo.p2': `Construida con Astro y Vue y desplegada en Firebase, es el ejemplo perfecto de un proyecto hecho por amor al juego y sí, somos los <strong>campeones de liga 2025/2026</strong>. 🏆`,
     'projects.realtajo.imageAlt': 'Vista previa del proyecto "Real Tajo C.F."',
 
     'projects.elunoporciento.blurb': '🧠 Quiz de lógica multijugador en tiempo real',
     'projects.elunoporciento.linkSource': 'Código fuente',
     'projects.elunoporciento.linkDemo': '¡Juega una partida!',
     'projects.elunoporciento.p1': `Inspirado en el concurso de televisión, <strong>El 1%</strong> es un juego multijugador de preguntas de lógica en tiempo real: creas una sala, compartes su código de 4 letras y hasta <strong>6 jugadores</strong> se enfrentan a <strong>10 rondas eliminatorias</strong> respondiendo a la vez contrarreloj. La sincronización corre sobre <strong>PartyKit con WebSockets</strong>, y el estado de cada sala vive en <strong>Cloudflare Durable Objects</strong>.`,
-    'projects.elunoporciento.p2': `Lo construí para zanjar un debate recurrente en las noches de juegos con amigos: ¿quién pertenece de verdad al 1% más listo? El veredicto sigue pendiente — pero las salas se siguen llenando. 🧠`,
+    'projects.elunoporciento.p2': `Lo construí para zanjar un debate recurrente en las noches de juegos con amigos: ¿quién pertenece de verdad al 1% más listo? El veredicto sigue pendiente pero las salas se siguen llenando. 🧠`,
     'projects.elunoporciento.imageAlt': 'Vista previa del proyecto "El 1%"',
 
     'projects.imcarrows.blurb': '🚗 Importación de coches desde Alemania',
@@ -188,7 +188,7 @@ export const ui = {
     'about.work.heading': 'En el trabajo',
     'about.work.emojiAlt': 'Emoji de portátil',
     'about.work.p1': `Con más de 6 años de experiencia en desarrollo frontend, trabajo con una gran <strong>atención al detalle</strong> y un interés genuino por la <strong>calidad del producto</strong>. He pasado de ser desarrollador a liderar el equipo de frontend, convirtiéndome en el <strong>referente técnico</strong> de todas las decisiones relacionadas con la interfaz.`,
-    'about.work.p2': `Lo que más me motiva es construir <strong>interfaces bien estructuradas y mantenibles</strong> que además resulten agradables de usar — y siempre estoy buscando formas de mejorar el código, el flujo de trabajo o la <strong>experiencia de usuario</strong>.`,
+    'about.work.p2': `Lo que más me motiva es construir <strong>interfaces bien estructuradas y mantenibles</strong> que además resulten agradables de usar y siempre estoy buscando formas de mejorar el código, el flujo de trabajo o la <strong>experiencia de usuario</strong>.`,
     'about.work.approachAlt': 'Mi forma de enfocar el código',
 
     'about.personal.heading': 'Mi lado personal',
