@@ -180,7 +180,7 @@ export const ui = {
     'projects.imcarrows.blurb': '🚗 Importación de coches desde Alemania',
     'projects.imcarrows.linkSource': 'Código fuente',
     'projects.imcarrows.linkDemo': '¡Pruébalo!',
-    'projects.imcarrows.p1': `Desarrollé de forma íntegra <strong>Imcarrows</strong>, una web orientada a captar clientes interesados en importar vehículos desde Alemania a España. El objetivo del proyecto era explicar con claridad el <strong>servicio completo</strong> —búsqueda de vehículos, inspección técnica, transporte y matriculación— y facilitar el <strong>contacto con clientes potenciales</strong> mediante formularios optimizados para la conversión.`,
+    'projects.imcarrows.p1': `Desarrollé de forma íntegra <strong>Imcarrows</strong>, una web orientada a captar clientes interesados en importar vehículos desde Alemania a España. El objetivo del proyecto era explicar con claridad el <strong>servicio completo</strong> búsqueda de vehículos, inspección técnica, transporte y matriculación y facilitar el <strong>contacto con clientes potenciales</strong> mediante formularios optimizados para la conversión.`,
     'projects.imcarrows.p2': `La empresa es de un buen amigo, y me alegró poder ayudarle construyendo lo que acabó siendo su principal herramienta de negocio.`,
     'projects.imcarrows.imageAlt': 'Vista previa del proyecto "Imcarrows"',
 
